@@ -1,0 +1,24 @@
+{
+  "name": "messagerobot",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "body-parser-xml": "^2.0.5",
+    "crypto": "^0.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1",
+    "openai": "^3.2.1",
+    "request": "^2.81.0",
+    "thunkify": "^2.1.2",
+    "xml2js": "^0.4.17"
+  }
+}
