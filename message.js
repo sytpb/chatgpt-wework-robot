@@ -141,11 +141,6 @@ export class Message {
      * return hello world
      */
     async getMsg(req) {
-
-        XMLParser.parseString(req.body, function (err, result) {
-            
-            console.log(result)
-        });
         console.log(req.body)
         const result = await XMLParser.parseString(req.body);
 

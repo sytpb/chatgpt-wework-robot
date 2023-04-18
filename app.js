@@ -1,5 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
+import bodyParser from "body-parser";
 import { Message } from "./message.js";
 
 config();
@@ -20,12 +21,16 @@ const message = new Message(options);
 
 message.log();
 
-// 接收消息服务器配置
+/*config parser for body*/
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+/*receive server url setting*/
 app.get('/message', function (req, res, next) {
     message.urlSetting(req, res);
 });
 
-// 被动回复消息
+/*被动回复消息*/
 app.post('/message', function (req, res, next) {
 
     const toUser = "touser2";
