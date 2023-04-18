@@ -140,14 +140,16 @@ export class Message {
      * 
      * return hello world
      */
-    getMsg(req) {
-        let data = null;
-        XMLParser.parseString(req.body, function (err, result) {
-            data = result;
-        });
-        console.log(data);
+    async getMsg(req) {
 
-        let msg = this.decrypt(data.xml.encrypt);
+        XMLParser.parseString(req.body, function (err, result) {
+            
+            console.log(result)
+        });
+
+        const result = await XMLParser.parseString(req.body);
+
+        let msg = this.decrypt(result.xml.encrypt);
 
         console.log(msg);
         return msg.xml.Content[0];
