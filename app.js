@@ -16,22 +16,22 @@ const options = {
 }
 
 
-const message = new Message(options,"touser");
-message.log();
+const message = new Message(options);
+
 //var wxcpt = new WorkWechat(config);
 
 // 接收消息服务器配置
 app.get('/message', function (req, res, next) {
-    console.log("abbbbbbbbbbbbbb");
-    message.connectServer(req, res);
+    message.urlSetting(req, res);
 });
 
 // 被动回复消息
 app.post('/message', function (req, res, next) {
-    message.reply(res, {
-    type: 'text',
-    content: 'hello!'
-  });
+    console.log(req);
+    const toUser = "touser2";
+    const msg = message.getMsg(req);
+    console.log(msg);
+    message.reply(res, {type: 'text',content: 'hello!'}, toUser);
 });
 
 // 获取access_token

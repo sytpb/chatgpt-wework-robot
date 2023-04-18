@@ -26,12 +26,12 @@ var base = {
 };
 
 export class Message {
-    constructor(options, touser) {
+    constructor(options) {
         this.options = options;
         this.res = null;
         this.secret = options.secret;
         this.agentid = options.agentid;
-        this.touser = touser;
+
         // 验证 URL 所需参数
         this.token = options.token;
         this.corpid = options.corpid;
@@ -197,21 +197,21 @@ export class Message {
     /**
      * 接收消息服务器配置
      */
-    connectServer(req, res) {
-        var msg = req.query;
+    urlSetting(req, res) {
+        const msg = req.query;
         if (this.verifyURL(msg.msg_signature, this.token, msg.timestamp, msg.nonce, msg.echostr)) {
             res.send(this.decrypt(msg.echostr));
         } else {
-            console.log('Error!');
+            console.log('urlSetting Error!');
         }
     }
     /**
      * 被动回复消息
      * @param {Object} options - 配置对象{type:[text|image|...], content: ['hello'|'hi, <a>...</a>']}
      */
-    reply(res, options) {
+    reply(res, options, user) {
         var config = {
-            toUser: this.touser,
+            toUser: user,
         };
         console.log(options)
         this.res = res;
