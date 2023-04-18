@@ -23,7 +23,8 @@ message.log();
 
 /*config parser for body*/
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 /*receive server url setting*/
 app.get('/message', function (req, res, next) {
@@ -34,7 +35,7 @@ app.get('/message', function (req, res, next) {
 app.post('/message', function (req, res, next) {
 
     const toUser = "touser2";
-    console.log(req);
+    console.log(req.body);
     const msg = message.getMsg(req);
 
     message.reply(res, {type: 'text',content: 'hello!'}, toUser);
