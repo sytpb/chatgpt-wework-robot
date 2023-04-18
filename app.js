@@ -23,9 +23,9 @@ const message = new Message(options);
 
 message.log();
 
-/*config parser for body*/
+/*config parser for body
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))*/
 
 
 
