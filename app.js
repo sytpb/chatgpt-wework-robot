@@ -22,8 +22,7 @@ const message = new Message(options);
 message.log();
 
 /*config parser for body*/
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.json());
 
 
 /*receive server url setting*/
