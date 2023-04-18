@@ -146,7 +146,7 @@ export class Message {
             
             console.log(result)
         });
-
+        console.log(req.body)
         const result = await XMLParser.parseString(req.body);
 
         let msg = this.decrypt(result.xml.encrypt);

@@ -29,7 +29,7 @@ app.get('/message', function (req, res, next) {
 app.post('/message', function (req, res, next) {
 
     const toUser = "touser2";
-    console.log(req.body);
+    console.log(req.body,req.data);
     const msg = message.getMsg(req);
 
     message.reply(res, {type: 'text',content: 'hello!'}, toUser);
@@ -43,5 +43,5 @@ message.sendMsg('what is up !');
 
 
 app.listen(PORT, () => {
-    console.log(`Server Running here 👉 https://localhost:${PORT}`);
+    console.log(`Server Running on Port:${PORT}`);
 });
