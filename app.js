@@ -18,7 +18,7 @@ const options = {
 
 const message = new Message(options);
 
-//var wxcpt = new WorkWechat(config);
+message.log();
 
 // 接收消息服务器配置
 app.get('/message', function (req, res, next) {
@@ -27,10 +27,11 @@ app.get('/message', function (req, res, next) {
 
 // 被动回复消息
 app.post('/message', function (req, res, next) {
-    console.log(req);
+
     const toUser = "touser2";
+    console.log(req.body);
     const msg = message.getMsg(req);
-    console.log(msg);
+
     message.reply(res, {type: 'text',content: 'hello!'}, toUser);
 });
 

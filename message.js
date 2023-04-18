@@ -4,22 +4,14 @@ import request from "request";
 
 import crypto from "crypto";
 import XMLParser from "xml2js";
-import thunkify from "thunkify";
 import templates from "./templates.js";
+
 
 config();
 
-var parseXML = thunkify(XMLParser.parseString);
 
-var buildXML = new XMLParser.Builder({
-  rootName:'xml',
-  cdata:true,
-  headless:true,
-  renderOpts: {
-    indent:' ',
-    pretty:'true'
-  }
-});
+
+
 
 var base = {
   url: 'https://qyapi.weixin.qq.com/cgi-bin',
@@ -42,7 +34,12 @@ export class Message {
     }
 
     log() {
-        console.log(this.options, this.iv, this.aeskey)
+        //console.log(this.options, this.iv, this.aeskey);
+        const xmlMsg = "<root>Hello xml2js!</root>";
+
+        XMLParser.parseString(xmlMsg, function (err, result) {
+            console.log(result.root);
+        });
     }
 
     timestamp(delay) {
@@ -74,13 +71,13 @@ export class Message {
     }
 
     decrypt(echostr) {
-        var aesCipher = crypto.createDecipheriv("aes-256-cbc", this.aeskey, this.iv);
+        let aesCipher = crypto.createDecipheriv("aes-256-cbc", this.aeskey, this.iv);
         aesCipher.setAutoPadding(false);
-        var decipheredBuff = Buffer.concat([aesCipher.update(echostr, 'base64'), aesCipher.final()]);
+        let decipheredBuff = Buffer.concat([aesCipher.update(echostr, 'base64'), aesCipher.final()]);
         decipheredBuff = this.PKCS7Decoder(decipheredBuff);
-        var len_netOrder_corpid = decipheredBuff.slice(16);
-        var msg_len = len_netOrder_corpid.slice(0, 4).readUInt32BE(0);
-        var result = len_netOrder_corpid.slice(4, msg_len + 4).toString();
+        let len_netOrder_corpid = decipheredBuff.subarray(16);
+        let msg_len = len_netOrder_corpid.subarray(0, 4).readUInt32BE(0);
+        let result = len_netOrder_corpid.subarray(4, msg_len + 4).toString();
 
         return result; // 返回一个解密后的明文
     }
@@ -144,12 +141,16 @@ export class Message {
      * return hello world
      */
     getMsg(req) {
-        var xmlMsg = this.decrypt(req.body.xml.encrypt);
-        var data = null;
-        XMLParser.parseString(xmlMsg, function (err, result) {
+        let data = null;
+        XMLParser.parseString(req.body, function (err, result) {
             data = result;
         });
-        return data.xml.Content[0];
+        console.log(data);
+
+        let msg = this.decrypt(data.xml.encrypt);
+
+        console.log(msg);
+        return msg.xml.Content[0];
     }
 
     getMsgObj(req) {
