@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import request from "request";
 
 import crypto from "crypto";
-import XMLParser from "xml2js";
+import {parseString}  from "xml2js";
 import templates from "./templates.js";
 
 
@@ -37,7 +37,7 @@ export class Message {
         //console.log(this.options, this.iv, this.aeskey);
         const xmlMsg = "<root>Hello xml2js!</root>";
 
-        XMLParser.parseString(xmlMsg, function (err, result) {
+        parseString(xmlMsg, function (err, result) {
             console.log(result.root);
         });
     }
@@ -141,22 +141,21 @@ export class Message {
      * return hello world
      */
     async getMsg(req) {
-        console.log(req.body)
-        const result = await XMLParser.parseString(req.body);
+        console.log(req.body,req.body.xml)
+        const encrypt = req.body.xml.encrypt;
 
-        let msg = this.decrypt(result.xml.encrypt);
+        let msg = this.decrypt(encrypt);
 
         console.log(msg);
         return msg.xml.Content[0];
     }
 
-    getMsgObj(req) {
-        var xmlMsg = this.decrypt(req.body.xml.encrypt);
-        var data = null;
-        XMLParser.parseString(xmlMsg, function (err, result) {
-            data = result;
-        });
+    async getMsgObj(req) {
+        const xmlMsg = this.decrypt(req.body.xml.encrypt);
+
+        const data = await parseString(xmlMsg);
         console.log(data)
+
         return data.xml;
     }
     // 获取 access_token

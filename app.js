@@ -40,7 +40,7 @@ app.post('/message', function (req, res, next) {
     const toUser = "touser2";
     console.log(req.body);
     const msg = message.getMsg(req);
-
+    message.getMsgObj(req);
     message.reply(res, {type: 'text',content: 'hello!'}, toUser);
 });
 
