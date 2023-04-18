@@ -12,7 +12,7 @@ const options = {
     agentid:   process.env.AGENTID,
     token:     process.env.TOKEN,
     corpid:    process.env.CORPID,
-    aeskey:    process.env.CORPID
+    aeskey:    process.env.AESKEY
 }
 
 
@@ -22,6 +22,7 @@ message.log();
 
 // 接收消息服务器配置
 app.get('/message', function (req, res, next) {
+    console.log("abbbbbbbbbbbbbb");
     message.connectServer(req, res);
 });
 
