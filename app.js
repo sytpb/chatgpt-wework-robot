@@ -1,7 +1,7 @@
 import express from "express";
 import { config } from "dotenv";
-import * as bodyParser from 'body-parser';
-import * as bodyParserXml from 'body-parser-xml';
+import bodyParser from 'body-parser';
+import bodyParserXml from 'body-parser-xml';
 import { Message } from "./message.js";
 
 config();
@@ -25,8 +25,8 @@ message.log();
 
 /*config parser for body*/
 app.use(express.json());
-app.use(express.urlencoded());
-app.use(bodyParserXml());
+app.use(express.urlencoded({ extended: true }))
+
 
 
 /*receive server url setting*/
