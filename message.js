@@ -141,7 +141,10 @@ export class Message {
      * return hello world
      */
     async getMsg(req) {
-        console.log(req.body,req.body.xml)
+        console.log("111111111111111111111111");
+        console.log(req.body.xml);
+        console.log("22222222222222222222222222");
+        console.log(req.body.xml.encrypt);
         const encrypt = req.body.xml.encrypt;
 
         let msg = this.decrypt(encrypt);
