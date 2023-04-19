@@ -155,17 +155,19 @@ export class Message {
     }
 
     async getMsgObj(req) {
-        const xmlMsg = this.decrypt(req.body.xml.Encrypt[0]);
+        const xmlString = this.decrypt(req.body.xml.Encrypt[0]);
 
-        const data = await parseString(xmlMsg);
-        console.log(data)
+        const result = await new Promise((resolve, reject) => 
+            parseString(xmlString,(err, res) => {
+                if (err) 
+                    reject(err);
+                else 
+                    resolve(res);
+            }));
 
-        parseString(xmlMsg, function (err, result) {
-            console.log(result,result.xml.FromUserName);
-        });
-
-        return data.xml;
+        return result.xml;
     }
+
     // 获取 access_token
     getAccessToken() {
         var url = `${base.url}/gettoken?corpid=${this.corpid}&corpsecret=${this.secret}`;
@@ -214,14 +216,14 @@ export class Message {
      * 被动回复消息
      * @param {Object} options - 配置对象{type:[text|image|...], content: ['hello'|'hi, <a>...</a>']}
      */
-    reply(res, options, user) {
-        const config = {
-            toUser: user,
-        };
+    reply(res, options, toUser) {
+        // const config = {
+        //     toUser: user,
+        // };
         console.log(options)
         this.res = res;
         this.res.writeHead(200, { 'Content-Type': 'application/xml' });
-        var resMsg = xmlmsg1(config.toUser, this.corpid, this.timestamp(), options.content);
+        var resMsg = xmlmsg1(toUser, this.corpid, this.timestamp(), options.content);
         console.log(resMsg)
         const msgEncrypt = this.encryptMsg(resMsg);
         console.log(msgEncrypt)

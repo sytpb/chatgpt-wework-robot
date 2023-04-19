@@ -37,11 +37,10 @@ app.get('/message', function (req, res, next) {
 /*被动回复消息*/
 app.post('/message', function (req, res, next) {
 
-    const toUser = "touser2";
-    console.log(req.body);
+
     //const msg = message.getMsg(req);
-    const fromUser = message.getMsgObj(req);
-    message.reply(res, {type: 'text',content: 'hello!'}, toUser);
+    const msgObj = message.getMsgObj(req);
+    message.reply(res, {type: 'text',content: 'hello!'}, msgObj.FromUserName);
 });
 
 // 获取access_token
