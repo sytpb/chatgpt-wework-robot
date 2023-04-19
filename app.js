@@ -41,7 +41,8 @@ app.get('/message', function (req, res, next) {
 app.post('/message', function (req, res, next) {
     
     const msgObj = message.getMsgObj(req);
-    const question = msgObj.Content;
+    //const question = msgObj.Content;
+    const question = "how to learn java";
     message.reply(res, {type: 'text',content: '正在请求ChatGPT回答...'}, msgObj.FromUserName);
     
     console.log(question);
