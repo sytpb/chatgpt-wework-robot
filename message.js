@@ -210,12 +210,7 @@ export class Message {
     /*主动发送消息*/
     sendMsg(answer, toUser) {
 
-        console.log("*******************");
         const token = fs.readFileSync('./token').toString();
-        console.log("token:",token);
-        console.log("touser",toUser);
-        console.log("agentid",process.env.AGENTID);
-        
         const texts = {
             "touser": toUser,
             "msgtype": "text",
@@ -224,9 +219,8 @@ export class Message {
                 "content": answer
             }
         };
-        console.log(texts);
 
-        var options = {
+        const options = {
             url: base.url + '/message/send?access_token=' + token,
             form: JSON.stringify(texts)
         };

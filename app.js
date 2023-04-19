@@ -13,18 +13,9 @@ bodyParserXml(bodyParser);
 const app = express();
 const PORT = process.env.PORT;
 
-/*const options = {
-    secret: process.env.SECRET,
-    agentid: process.env.AGENTID,
-    token: process.env.TOKEN,
-    corpid: process.env.CORPID,
-    aeskey: process.env.AESKEY
-}*/
-
-
 const message = new Message();
 
-message.log();
+/*message.log();*/
 
 /*config parser for body*/
 app.use(express.json());
@@ -43,7 +34,7 @@ app.post('/message', function (req, res, next) {
     message.getMsgObj(req).then(result => {
         const question = result.Content[0];
         //const question = "what's the day today?";
-        console.log(question,typeof(question));
+        console.log(question);
         const toUser = result.FromUserName[0];
         message.reply(res, { type: 'text', content: '正在等待回答' }, toUser);
 
@@ -55,7 +46,7 @@ app.post('/message', function (req, res, next) {
 
 });
 
-// 获取access_token
+/*获取access_token*/
 message.updateToken();
 
 // 主动推送消息
