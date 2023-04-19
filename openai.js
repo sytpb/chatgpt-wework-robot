@@ -11,21 +11,18 @@ const openai = new OpenAIApi(configuration);
 
 const getAIChat = async (question) => {
     
-    console.log("111111111111111111111",question);
     try {
         const res = await openai.createChatCompletion({
             model: models[2],
             messages:[{role:"user",content: question}]
         })
         console.log(res);
-        console.log("----------------------------");
         return res;
     }
     catch(error) {
-        console.log("*******************");
         console.log(error);
     }
-    console.log("222222222222222222222");
+
 };
 
 export default getAIChat;

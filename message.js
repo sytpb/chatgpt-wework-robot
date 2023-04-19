@@ -112,11 +112,6 @@ export class Message {
         `;
 
         return resXml;
-        // result.Encrypt = this.encrypt(replyMsg);
-        // result.Nonce = options.nonce || parseInt((Math.random() * 10000000000), 10);
-        // result.TimeStamp = options.timestamp || this.timestamp();
-        // result.MsgSignature = this.getSignature(this.token, result.TimeStamp, result.Nonce, result.Encrypt);
-        // return buildXML.buildObject(result);
     }
     // 消息解密
     decryptMsg(msgSignature, token, timestamp, nonce, echostr) {
@@ -146,7 +141,7 @@ export class Message {
                     reject(err);
                 else 
                     resolve(res);
-            }));
+        }));
 
         return result.xml;
     }
@@ -204,7 +199,7 @@ export class Message {
 
         this.res = res;
         this.res.writeHead(200, { 'Content-Type': 'application/xml' });
-        var resMsg = xmlmsg1(toUser, this.corpid, this.timestamp(), options.content);
+        var resMsg = xmlmsg1(toUser, process.env.CORPID, this.timestamp(), options.content);
 
         const msgEncrypt = this.encryptMsg(resMsg);
 
