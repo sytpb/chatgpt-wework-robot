@@ -208,8 +208,8 @@ export class Message {
 
     /*主动发送消息*/
     sendMsg(answer, toUser) {
-        var token = fs.readFileSync('./token').toString();
-        var texts = {
+        const token = fs.readFileSync('./token').toString();
+        const texts = {
             "touser": toUser,
             "msgtype": "text",
             "agentid": process.env.AGENTID,
@@ -227,6 +227,8 @@ export class Message {
             if (err) {
                 console.log(err);
             }
+            console.log("-------------------------------------")
+            console.log(res,"\n",body)
         });
     }
 }  
