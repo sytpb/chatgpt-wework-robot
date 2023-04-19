@@ -17,12 +17,14 @@ const getAIChat = async (question) => {
             model: models[0],
             messages:[{role:"user",content: question}]
         })
+        console.log(res);
+        return res;
     }
     catch(error) {
+        console.log("*******************");
         console.log(error);
     }
     console.log("222222222222222222222");
-    return res;
 };
 
 export default getAIChat;
