@@ -47,6 +47,10 @@ app.post('/message', function (req, res, next) {
     
     console.log(question);
     getAIChat(question).then(result => {
+        console.log(result);
+        console.log(result?.data);
+        console.log(result?.data?.choices[0]);
+        
         const answer = result?.data?.choices[0]?.message?.content;
         message.sendMsg(answer,msgObj.FromUserName);
     })
