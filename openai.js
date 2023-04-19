@@ -20,7 +20,7 @@ const getAIChat = async (question) => {
         return res;
     }
     catch(error) {
-        console.log(error);
+        console.log(error?.data?.error);
     }
 
 };

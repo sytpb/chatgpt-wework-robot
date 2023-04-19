@@ -168,7 +168,7 @@ export class Message {
 
         this.getAccessToken().then(res => {
             console.log(res);
-            
+
             const token = res['access_token'];
             fs.writeFile('./token', token, function (err) {
                 console.log('token saved.');
@@ -209,6 +209,8 @@ export class Message {
 
     /*主动发送消息*/
     sendMsg(answer, toUser) {
+
+        console.log("*******************");
         const token = fs.readFileSync('./token').toString();
         console.log("token:",token);
         console.log("touser",toUser);
