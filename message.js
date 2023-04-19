@@ -35,7 +35,7 @@ export class Message {
 
     log() {
         //console.log(this.options, this.iv, this.aeskey);
-        const xmlMsg = "<root>Hello xml2js!</root>";
+        const xmlMsg = "<root>Hello xml2js 1111!</root>";
 
         parseString(xmlMsg, function (err, result) {
             console.log(result.root);
