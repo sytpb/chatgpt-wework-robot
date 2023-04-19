@@ -43,6 +43,7 @@ app.post('/message', function (req, res, next) {
     message.getMsgObj(req).then(result => {
         const question = result.Content[0];
         //const question = "what's the day today?";
+        console.log(question,typeof(question));
         const toUser = result.FromUserName[0];
         message.reply(res, { type: 'text', content: '正在等待回答' }, toUser);
 
