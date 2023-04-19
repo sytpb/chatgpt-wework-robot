@@ -13,16 +13,16 @@ bodyParserXml(bodyParser);
 const app = express();
 const PORT = process.env.PORT;
 
-const options = {
+/*const options = {
     secret: process.env.SECRET,
     agentid: process.env.AGENTID,
     token: process.env.TOKEN,
     corpid: process.env.CORPID,
     aeskey: process.env.AESKEY
-}
+}*/
 
 
-const message = new Message(options);
+const message = new Message();
 
 message.log();
 
@@ -51,8 +51,6 @@ app.post('/message', function (req, res, next) {
             message.sendMsg(answer, toUser);
         })
     })
-
-
 
 });
 

@@ -14,18 +14,17 @@ const base = {
 
 
 export class Message {
-    constructor(options) {
-        this.options = options;
-        this.res = null;
-        this.secret = options.secret;
-        this.agentid = options.agentid;
+    constructor() {
 
-        // 验证 URL 所需参数
-        this.token = options.token;
-        this.corpid = options.corpid;
-        this.aeskey = options.aeskey;
+        this.secret =   process.env.SECRET;
+        this.agentid =  process.env.AGENTID;
+
+        /*验证 URL 所需参数*/
+        this.token =    process.env.TOKEN;
+        this.corpid =   process.env.CORPID;
+        this.aeskey =   process.env.AESKEY;
         /*to check*/
-        this.aeskey = new Buffer.from(options.aeskey + '=', 'base64');
+        this.aeskey = new Buffer.from(this.aeskey + '=', 'base64');
         this.iv = this.aeskey.slice(0, 16);
     }
 
@@ -168,7 +167,9 @@ export class Message {
     saveToken() {
 
         this.getAccessToken().then(res => {
-            var token = res['access_token'];
+            console.log(res);
+            
+            const token = res['access_token'];
             fs.writeFile('./token', token, function (err) {
                 console.log('token saved.');
             });
@@ -197,13 +198,13 @@ export class Message {
     /*被动回复消息*/
     reply(res, options, toUser) {
 
-        this.res = res;
-        this.res.writeHead(200, { 'Content-Type': 'application/xml' });
+        //this.res = res;
+        res.writeHead(200, { 'Content-Type': 'application/xml' });
         var resMsg = xmlmsg1(toUser, process.env.CORPID, this.timestamp(), options.content);
 
         const msgEncrypt = this.encryptMsg(resMsg);
 
-        this.res.end(msgEncrypt);
+        res.end(msgEncrypt);
     }
 
     /*主动发送消息*/
