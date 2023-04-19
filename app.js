@@ -45,17 +45,17 @@ app.post('/message', function (req, res, next) {
     const question = "what's the day today?";
     message.reply(res, {type: 'text',content: '正在等待回答'}, msgObj.FromUserName);
     
-    console.log("------" + question + "------");
+    console.log("------" + question + "------",msgObj.FromUserName);
     getAIChat(question).then(result => {
         const answer = result?.data?.choices[0]?.message?.content;
-        console.log(answer);
+        console.log(msgObj.FromUserName);
         message.sendMsg(answer,msgObj.FromUserName);
     })
 
 });
 
 // 获取access_token
-//message.updateToken();
+message.updateToken();
 
 // 主动推送消息
 //message.sendMsg('what is up !','songyantao');
