@@ -14,11 +14,11 @@ const app = express();
 const PORT = process.env.PORT;
 
 const options = {
-    secret:    process.env.SECRET,
-    agentid:   process.env.AGENTID,
-    token:     process.env.TOKEN,
-    corpid:    process.env.CORPID,
-    aeskey:    process.env.AESKEY
+    secret: process.env.SECRET,
+    agentid: process.env.AGENTID,
+    token: process.env.TOKEN,
+    corpid: process.env.CORPID,
+    aeskey: process.env.AESKEY
 }
 
 
@@ -39,18 +39,22 @@ app.get('/message', function (req, res, next) {
 
 /*被动回复消息*/
 app.post('/message', function (req, res, next) {
-    
-    const msgObj = message.getMsgObj(req);
-    //const question = msgObj.Content;
-    const question = "what's the day today?";
-    message.reply(res, {type: 'text',content: '正在等待回答'}, msgObj.FromUserName);
-    
-    console.log("------" + question + "------",msgObj.FromUserName);
-    getAIChat(question).then(result => {
-        const answer = result?.data?.choices[0]?.message?.content;
-        console.log(msgObj.FromUserName);
-        message.sendMsg(answer,msgObj.FromUserName);
+
+    message.getMsgObj(req).then(result => {
+        //const question = result.Content;
+        const question = "what's the day today?";
+        const toUser = result.FromUserName;
+        message.reply(res, { type: 'text', content: '正在等待回答' }, toUser);
+
+        console.log("------" + question + "------", toUser);
+
+        getAIChat(question).then(result => {
+            const answer = result?.data?.choices[0]?.message?.content;
+            message.sendMsg(answer, toUser);
+        })
     })
+
+
 
 });
 
