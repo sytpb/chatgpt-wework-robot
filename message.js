@@ -101,7 +101,7 @@ export class Message {
         var nonce = options.nonce || parseInt((Math.random() * 10000000000), 10);
         var timestamp = options.timestamp || this.timestamp();
         var msgsignature = this.getSignature(this.token, timestamp, nonce, encrypt);
-        // 标准回包
+
         var resXml = `
           <xml>
             <Encrypt><![CDATA[${encrypt}]]></Encrypt>
@@ -146,7 +146,7 @@ export class Message {
         return result.xml;
     }
 
-    // 获取 access_token
+    /*获取 access_token*/
     getAccessToken() {
 
         var url = `${base.url}/gettoken?corpid=${this.corpid}&corpsecret=${this.secret}`;
@@ -231,9 +231,8 @@ export class Message {
         request.post(options, function (err, res, body) {
             if (err) {
                 console.log(err);
+                console.log(res?.headers,"\n",body)
             }
-            console.log("-------------------------------------")
-            console.log(res?.headers,"\n",body)
         });
     }
 }  
