@@ -43,6 +43,8 @@ app.post('/message', function (req, res, next) {
     const msgObj = message.getMsgObj(req);
     const question = msgObj.Content;
     message.reply(res, {type: 'text',content: '正在请求ChatGPT回答...'}, msgObj.FromUserName);
+    
+    console.log(question);
     const answer = getAIChat(question);
     message.sendMsg(answer,msgObj.FromUserName);
 });
