@@ -42,7 +42,7 @@ app.post('/message', function (req, res, next) {
     
     const msgObj = message.getMsgObj(req);
     //const question = msgObj.Content;
-    const question = "how to learn java";
+    const question = "what is day today?";
     message.reply(res, {type: 'text',content: '正在等待回答'}, msgObj.FromUserName);
     
     console.log("------" + question + "------");
@@ -55,10 +55,10 @@ app.post('/message', function (req, res, next) {
 });
 
 // 获取access_token
-message.updateToken();
+//message.updateToken();
 
 // 主动推送消息
-message.sendMsg('what is up !','songyantao');
+//message.sendMsg('what is up !','songyantao');
 
 
 app.listen(PORT, () => {
