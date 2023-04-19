@@ -209,6 +209,7 @@ export class Message {
     /*主动发送消息*/
     sendMsg(answer, toUser) {
         const token = fs.readFileSync('./token').toString();
+        console.log("token:",token);
         const texts = {
             "touser": toUser,
             "msgtype": "text",
@@ -228,7 +229,7 @@ export class Message {
                 console.log(err);
             }
             console.log("-------------------------------------")
-            console.log(res,"\n",body)
+            console.log(res?.headers,"\n",body)
         });
     }
 }  
