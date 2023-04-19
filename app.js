@@ -2,7 +2,10 @@ import express from "express";
 import { config } from "dotenv";
 import bodyParser from 'body-parser';
 import bodyParserXml from 'body-parser-xml';
+
+import getAIChat from "./openai.js";
 import { Message } from "./message.js";
+
 
 config();
 bodyParserXml(bodyParser);
@@ -36,18 +39,19 @@ app.get('/message', function (req, res, next) {
 
 /*被动回复消息*/
 app.post('/message', function (req, res, next) {
-
-
-    //const msg = message.getMsg(req);
+    
     const msgObj = message.getMsgObj(req);
-    message.reply(res, {type: 'text',content: 'hello!'}, msgObj.FromUserName);
+    const question = msgObj.Content;
+    message.reply(res, {type: 'text',content: '正在请求ChatGPT回答...'}, msgObj.FromUserName);
+    const answer = getAIChat(question);
+    message.sendMsg(answer,msgObj.FromUserName);
 });
 
 // 获取access_token
 message.updateToken();
 
 // 主动推送消息
-message.sendMsg('what is up !');
+message.sendMsg('what is up !','songyantao');
 
 
 app.listen(PORT, () => {

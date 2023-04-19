@@ -6,16 +6,12 @@ import crypto from "crypto";
 import {parseString}  from "xml2js";
 import {xmlmsg1,xmlmsg2} from "./templates.js";
 
-
 config();
 
-
-
-
-
-var base = {
+const base = {
   url: 'https://qyapi.weixin.qq.com/cgi-bin',
 };
+
 
 export class Message {
     constructor(options) {
@@ -71,6 +67,7 @@ export class Message {
     }
 
     decrypt(echostr) {
+
         let aesCipher = crypto.createDecipheriv("aes-256-cbc", this.aeskey, this.iv);
         aesCipher.setAutoPadding(false);
         let decipheredBuff = Buffer.concat([aesCipher.update(echostr, 'base64'), aesCipher.final()]);
@@ -96,6 +93,7 @@ export class Message {
 
     // 消息加密
     encryptMsg(replyMsg, opts) {
+
         var result = {};
         var options = opts || {};
 
@@ -122,6 +120,7 @@ export class Message {
     }
     // 消息解密
     decryptMsg(msgSignature, token, timestamp, nonce, echostr) {
+
         var msgEncrypt = echostr.Encrypt;
         if (this.getSignature(token, timestamp, nonce, msgEncrypt) != msgSignature) {
             console.log('消息签名不一致');
@@ -130,33 +129,17 @@ export class Message {
         var decryptedMsg = this.decrypt(msgEncrypt);
         return parseXML(decryptedMsg, { explicitArray: false });
     }
-    /**
-     * 解析请求中的文字信息
-     * eg.
-     * <xml>
-     *   ...
-     *   <Content>hello world</Content>
-     * </xml>
-     * 
-     * return hello world
-     */
-    async getMsg(req) {
-        console.log("111111111111111111111111");
-        console.log(req.body.xml);
-        console.log("22222222222222222222222222");
-        console.log(req.body.xml.ToUserName,"\n",req.body.xml.Encrypt);
+
+    getMsg(req) {
+
         const encrypt = req.body.xml.Encrypt[0];
-        console.log(typeof encrypt);
-
         let msg = this.decrypt(encrypt);
-
-        console.log(msg);
         return msg.xml.Content[0];
     }
 
     async getMsgObj(req) {
-        const xmlString = this.decrypt(req.body.xml.Encrypt[0]);
 
+        const xmlString = this.decrypt(req.body.xml.Encrypt[0]);
         const result = await new Promise((resolve, reject) => 
             parseString(xmlString,(err, res) => {
                 if (err) 
@@ -170,6 +153,7 @@ export class Message {
 
     // 获取 access_token
     getAccessToken() {
+
         var url = `${base.url}/gettoken?corpid=${this.corpid}&corpsecret=${this.secret}`;
         var options = {
             method: 'GET',
@@ -187,6 +171,7 @@ export class Message {
     }
 
     saveToken() {
+
         this.getAccessToken().then(res => {
             var token = res['access_token'];
             fs.writeFile('./token', token, function (err) {
@@ -196,15 +181,16 @@ export class Message {
     }
 
     updateToken() {
+
         this.saveToken();
         setInterval(function () {
             this.saveToken();
         }, 7000 * 1000); // ≈ 2h
     }
-    /**
-     * 接收消息服务器配置
-     */
+
+    /*接收消息服务器配置*/
     urlSetting(req, res) {
+
         const msg = req.query;
         if (this.verifyURL(msg.msg_signature, this.token, msg.timestamp, msg.nonce, msg.echostr)) {
             res.send(this.decrypt(msg.echostr));
@@ -212,34 +198,28 @@ export class Message {
             console.log('urlSetting Error!');
         }
     }
-    /**
-     * 被动回复消息
-     * @param {Object} options - 配置对象{type:[text|image|...], content: ['hello'|'hi, <a>...</a>']}
-     */
+
+    /*被动回复消息*/
     reply(res, options, toUser) {
-        // const config = {
-        //     toUser: user,
-        // };
-        console.log(options)
+
         this.res = res;
         this.res.writeHead(200, { 'Content-Type': 'application/xml' });
         var resMsg = xmlmsg1(toUser, this.corpid, this.timestamp(), options.content);
-        console.log(resMsg)
+
         const msgEncrypt = this.encryptMsg(resMsg);
-        console.log(msgEncrypt)
+
         this.res.end(msgEncrypt);
     }
-    /**
-     * 主动发送消息 (可继续封装完善)
-     */
-    sendMsg(msg) {
+
+    /*主动发送消息*/
+    sendMsg(answer, toUser) {
         var token = fs.readFileSync('./token').toString();
         var texts = {
-            "touser": this.userId,
+            "touser": toUser,
             "msgtype": "text",
-            "agentid": this.agentid,
+            "agentid": process.env.AGENTID,
             "text": {
-                "content": msg
+                "content": answer
             }
         };
 
