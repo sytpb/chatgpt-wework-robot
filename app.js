@@ -43,11 +43,11 @@ app.post('/message', function (req, res, next) {
     const msgObj = message.getMsgObj(req);
     //const question = msgObj.Content;
     const question = "how to learn java";
-    message.reply(res, {type: 'text',content: 'hello 2'}, msgObj.FromUserName);
+    message.reply(res, {type: 'text',content: '收到'}, msgObj.FromUserName);
     
     console.log(question);
     getAIChat(question).then(result => {
-        const answer = result?.choices[0]?.message?.content;
+        const answer = result?.data?.choices[0]?.message?.content;
         message.sendMsg(answer,msgObj.FromUserName);
     })
 
