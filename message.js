@@ -4,7 +4,7 @@ import request from "request";
 
 import crypto from "crypto";
 import {parseString}  from "xml2js";
-import templates from "./templates.js";
+import {xmlmsg1,xmlmsg2} from "./templates.js";
 
 
 config();
@@ -160,6 +160,10 @@ export class Message {
         const data = await parseString(xmlMsg);
         console.log(data)
 
+        parseString(xmlMsg, function (err, result) {
+            console.log(result,result.xml.FromUserName);
+        });
+
         return data.xml;
     }
     // 获取 access_token
@@ -211,16 +215,15 @@ export class Message {
      * @param {Object} options - 配置对象{type:[text|image|...], content: ['hello'|'hi, <a>...</a>']}
      */
     reply(res, options, user) {
-        var config = {
+        const config = {
             toUser: user,
         };
         console.log(options)
         this.res = res;
         this.res.writeHead(200, { 'Content-Type': 'application/xml' });
-        var resMsg = templates[options.type](config.toUser, this.corpid, this.timestamp(), options.content);
-        console.log('resMsg')
+        var resMsg = xmlmsg1(config.toUser, this.corpid, this.timestamp(), options.content);
         console.log(resMsg)
-        var msgEncrypt = this.encryptMsg(resMsg);
+        const msgEncrypt = this.encryptMsg(resMsg);
         console.log(msgEncrypt)
         this.res.end(msgEncrypt);
     }
