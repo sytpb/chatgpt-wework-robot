@@ -22,7 +22,9 @@ const getAIChat = async (question) => {
     }
     catch(error) {
         console.log("OpenAI happen error!");
-        console.log(error);
+        console.log(error?.response);
+        console.log(error?.response.data);
+        console.log(error?.response.data.error);
     }
 
 };
