@@ -17,10 +17,12 @@ const getAIChat = async (question) => {
             messages:[{role:"user",content: question}]
         })
         console.log(res?.data?.choices[0]?.message?.content);
+        console.log(res);
         return res;
     }
     catch(error) {
-        console.log(error?.data?.error);
+        console.log("OpenAI happen error!");
+        console.log(error);
     }
 
 };
