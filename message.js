@@ -144,7 +144,7 @@ export class Message {
         console.log("111111111111111111111111");
         console.log(req.body.xml);
         console.log("22222222222222222222222222");
-        console.log(req.body.xml.encrypt);
+        console.log(req.body.xml.ToUserName,"\n",req.body.xml.Encrypt);
         const encrypt = req.body.xml.encrypt;
 
         let msg = this.decrypt(encrypt);
