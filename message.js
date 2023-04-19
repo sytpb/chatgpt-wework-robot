@@ -155,7 +155,7 @@ export class Message {
     }
 
     async getMsgObj(req) {
-        const xmlMsg = this.decrypt(req.body.xml.encrypt);
+        const xmlMsg = this.decrypt(req.body.xml.Encrypt[0]);
 
         const data = await parseString(xmlMsg);
         console.log(data)
