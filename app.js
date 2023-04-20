@@ -12,15 +12,13 @@ bodyParserXml(bodyParser);
 
 const app = express();
 const PORT = process.env.PORT;
-
 const message = new Message();
 
 /*message.log();*/
 
 /*config parser for body*/
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
-
+app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.xml());
 
 /*receive server url setting*/
@@ -28,7 +26,7 @@ app.get('/message', function (req, res, next) {
     message.urlSetting(req, res);
 });
 
-/*被动回复消息*/
+/*passive message response*/
 app.post('/message', function (req, res, next) {
 
     message.getMsgObj(req).then(result => {
@@ -46,12 +44,8 @@ app.post('/message', function (req, res, next) {
 
 });
 
-/*获取access_token*/
+/*init access_token*/
 initAccessToken();
-
-// 主动推送消息
-//message.sendMsg('what is up !','songyantao');
-
 
 app.listen(PORT, () => {
     console.log(`Server Running on Port:${PORT}`);

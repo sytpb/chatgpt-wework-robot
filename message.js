@@ -29,10 +29,10 @@ export class Message {
         this.iv = this.aeskey.slice(0, 16);
     }
 
+    /*for test*/
     log() {
-        //console.log(this.options, this.iv, this.aeskey);
-        const xmlMsg = "<root>Hello xml2js 1111!</root>";
 
+        const xmlMsg = "<root>Hello xml2js 1111!</root>";
         parseString(xmlMsg, function (err, result) {
             console.log(result.root);
         });
@@ -76,7 +76,7 @@ export class Message {
         let msg_len = len_netOrder_corpid.subarray(0, 4).readUInt32BE(0);
         let result = len_netOrder_corpid.subarray(4, msg_len + 4).toString();
 
-        return result; // 返回一个解密后的明文
+        return result;
     }
 
     getSignature(token, timestamp, nonce, echostr) {
@@ -146,46 +146,7 @@ export class Message {
         return result.xml;
     }
 
-    /*获取 access_token*/
-    /*getAccessToken() {
-
-        var url = `${base.url}/gettoken?corpid=${this.corpid}&corpsecret=${this.secret}`;
-        var options = {
-            method: 'GET',
-            url: url
-        };
-        return new Promise((resolve, reject) => {
-            request(options, function (err, res, body) {
-                if (res) {
-                    resolve(JSON.parse(body));
-                } else {
-                    reject(err);
-                }
-            });
-        });
-    }*/
-
-    /*saveToken() {
-
-        this.getAccessToken().then(res => {
-            console.log(res);
-
-            const token = res['access_token'];
-            fs.writeFile('./token', token, function (err) {
-                console.log('token saved.');
-            });
-        });
-    }*/
-
-    /*updateToken() {
-
-        this.saveToken();
-        setInterval(function () {
-            this.saveToken();
-        }, 7000 * 1000); // ≈ 2h
-    }*/
-
-    /*接收消息服务器配置*/
+    /*response the server url verify*/
     urlSetting(req, res) {
 
         const msg = req.query;
@@ -196,10 +157,9 @@ export class Message {
         }
     }
 
-    /*被动回复消息*/
+    /*passive message*/
     reply(res, options, toUser) {
 
-        //this.res = res;
         res.writeHead(200, { 'Content-Type': 'application/xml' });
         var resMsg = xmlmsg1(toUser, process.env.CORPID, this.timestamp(), options.content);
 
@@ -208,12 +168,10 @@ export class Message {
         res.end(msgEncrypt);
     }
 
-    /*主动发送消息*/
+    /*active message*/
     async sendMsg(answer, toUser) {
 
-        //const token = fs.readFileSync('./token').toString();
         const token = await getAccessToken();
-
         const texts = {
             "touser": toUser,
             "msgtype": "text",

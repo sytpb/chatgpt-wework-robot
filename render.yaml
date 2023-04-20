@@ -1,5 +1,5 @@
 services:
-  # A Docker web service
+  # node web service
   - type: web
     name: Wework-Chatgpt
     env: node
