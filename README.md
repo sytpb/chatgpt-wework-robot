@@ -1,5 +1,6 @@
 # chatgpt-wework-robot
-the text robot for enterprise weixin
+## ChatGPT 接入企业微信,赋能商业成功
+
 
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/233244040-7ab04261-79d7-4588-b8b1-18fc64d9f040.png" width="600px">
