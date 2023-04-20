@@ -209,10 +209,12 @@ export class Message {
     }
 
     /*主动发送消息*/
-    sendMsg(answer, toUser) {
+    async sendMsg(answer, toUser) {
 
         //const token = fs.readFileSync('./token').toString();
-        const token = getAccessToken();
+        const token = await getAccessToken();
+        console.log(token);
+        
         const texts = {
             "touser": toUser,
             "msgtype": "text",
