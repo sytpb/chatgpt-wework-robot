@@ -1,0 +1,26 @@
+services:
+  # A Docker web service
+  - type: web
+    name: Wework-Chatgpt
+    env: docker
+    repo: https://github.com/sytpb/chatgpt-wework-robot # optional
+    region: singapore     # optional (defaults to oregon)
+    plan: free            # optional (defaults to starter instance type)
+    branch: main          # optional (defaults to master)
+    rootDir: webdis
+    dockerCommand: ./webdis.sh      # optional (defaults to Dockerfile command)
+    numInstances: 1                 # optional (defaults to 1)
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 6060
+      - key: AGENTID
+        value: agentid
+      - key: TOKEN
+        value: token
+      - key: CORPID
+        value: corpid
+      - key: AESKEY
+        value: aeskey
+      - key: OPENAI_API_KEY
+        value: openai api key
