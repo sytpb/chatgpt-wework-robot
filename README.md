@@ -1,4 +1,6 @@
-# 一键部署chatGPT到企业微信应用  **不需要VPN 不会封号的方案**
+# 一键部署chatGPT到企业微信应用 <br/>
+
+**本套代码音方案采用国外服务反向代理模式，安全可靠，不存在封号问题，节点是新加坡，网络延迟小**
 
 
 <div align="center">
@@ -31,7 +33,7 @@
 ![image](https://user-images.githubusercontent.com/12178686/233253399-489b0905-9a4c-4b2e-8f5d-ed7e8dac0f6b.png)
 
 
-第二步，配置应用，操作方法：接收消息一栏-->设置API接收-->未完等待第三步。
+第二步，配置应用，操作方法：接收消息一栏-->设置API接收-->未完等待第四步。
 ![image](https://user-images.githubusercontent.com/12178686/233256124-cc6334e3-90ff-43e7-8fe5-3dc0026226fb.png)
 
 第三步，记录和准备下列字段信息， **corpid, agentid, secret, token ,aeskey, open-api-key**
@@ -59,7 +61,7 @@
 如图所示，将上面的字段信息填入，然后点击Apply。 
 
 
-需要等3-5分钟部署，完成后复制生成的服务的URL，如下图，然URL，粘贴到上面第二步页面里，然后点保存，看到提示类似”保存成功“，代表服务已经配置成功了！
+需要等3-5分钟部署，完成后复制生成的服务的URL，如下图，然URL，粘贴到上面**第二步**页面里，然后点保存，看到提示类似”保存成功“，代表服务已经配置成功了！
 ![image](https://user-images.githubusercontent.com/12178686/233277321-5392207b-58c5-4c6e-959e-de71518e4094.png)
 
 最后一步： 企业可信IP配置， 应用页的最下方，配置可信IP。 
