@@ -3,6 +3,7 @@ services:
   - type: web
     name: Wework-Chatgpt
     env: docker
+    autoDeploy: false
     repo: https://github.com/sytpb/chatgpt-wework-robot # optional
     region: singapore     # optional (defaults to oregon)
     plan: free            # optional (defaults to starter instance type)
