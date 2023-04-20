@@ -1,4 +1,4 @@
-# chatgpt-wework-robot
+# 企业微信上可以使用 chatGPT AI 智能问答了 （无须VPN，甚至不需要chatgpt账号）~~~
 
 
 ## ChatGPT 接入企业微信,赋能商业成功
@@ -12,47 +12,17 @@
 </div>
 
 
-# About The Project
+## 关于本项目
+本项目可以实现一键部署ChatGPT到企业微信中，使ChatGPT与企业微信完美融合，手机或电脑上，打开企业微信，就可以使用强大的ChatGPT智能问答。截止目前，本项目可以提供两个能力:<br>
 
-<div align="center">
-    <img src="https://user-images.githubusercontent.com/12178686/231932692-40fcedf4-343c-4c96-9f1f-eb39fef749df.png" width="600px">
-</div>
+1. 功能集成，将ChatGPT问答功能集成到企业微信中，借助企业微信权限功能，可以将ChatGPT共享到企业应用当中，此功能要求简单，有企业微信管理员权限即可，方法，参照下面的**部署方法**
+2. 更强大的功能扩展，本项目为开源项目，有开发能力的小伙伴可以Fork到自己的仓库，根据自己企业业务需要，比如结合企业微信开放的API，二次开发一些其他功能。
 
-This project enables you to rapidly develop a web application utilizing ChatGPT APIs. Several demo files are provided to demonstrate the step-by-step process of building the application.
-
-<div align="center">
-    <img src="https://user-images.githubusercontent.com/12178686/231933050-36a50129-5a1e-4d0f-a844-4bd46897f68e.png" alt="gpt-chat-robot.py" width="300px" height="400px">
-</div>
+3. 其他功能，后续更新。
 
 
-# Built With
+## 部署方法
 
-**Python** <br>
-**pip** <br>
-**Openai** <br>
-https://platform.openai.com/
-
-**Gradio** <br>
-https://gradio.app/docs/#chatbot
-
-
-# Prerequisites
-
-A ChatGPT account and applying an API KEY
-
-https://platform.openai.com/account/api-keys
-
-
-`<pip install openai>` <br>
-`<pip install gradio>`
-
-
-# Run
-**1.** VSCode >> Run Python File (right top) <br>
-**2.** local access http://127.0.0.1:7860/ in your browser  <br>
-    public access as below picture show. 
-
-![image](https://user-images.githubusercontent.com/12178686/231936265-7c02c9d3-fc30-4960-8ca9-e97c1ce14188.png)
 
 
 
