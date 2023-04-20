@@ -1,7 +1,7 @@
 # 企业微信上可以使用 chatGPT AI 智能问答了 （无须VPN，甚至不需要chatgpt账号）~~~
 
 
-## ChatGPT 接入企业微信,赋能商业成功
+
 
 
 <div align="center">
@@ -9,6 +9,10 @@
 </div>
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/233246963-9f7e5eb0-d78f-4286-8536-2f4e9f9bee11.png" width="800px">
+</div>
+
+<div align="center"  style="font-size: 12px; line-height: 12px;">
+   ChatGPT 接入企业微信,赋能商业成功
 </div>
 
 
