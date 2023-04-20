@@ -14,14 +14,14 @@ services:
     startCommand: node app.js
     envVars:
       - key: PORT
-        generateValue: true
+        sync: false
       - key: AGENTID
-        generateValue: true
+        sync: false
       - key: TOKEN
-        generateValue: true
+        sync: false
       - key: CORPID
-        generateValue: true
+        sync: false
       - key: AESKEY
-        generateValue: true
+        sync: false
       - key: OPENAI_API_KEY
-        generateValue: true
+        sync: false
