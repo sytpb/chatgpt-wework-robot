@@ -1,4 +1,4 @@
-# 企业微信应用-chatGPT AI 智能问答  **不需要VPN 反向代理不封号的方案**
+# 企业微信应用-chatGPT AI 智能问答  **不需要VPN 不封号 不封号**
 
 
 <div align="center">
