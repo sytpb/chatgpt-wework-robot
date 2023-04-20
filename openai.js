@@ -16,7 +16,6 @@ const getAIChat = async (question) => {
             model: models[2],
             messages:[{role:"user",content: question}]
         })
-        console.log(res?.data?.choices[0]?.message?.content);
         return res;
     }
     catch(error) {

@@ -38,7 +38,10 @@ app.post('/message', function (req, res, next) {
 
         getAIChat(question).then(result => {
             const answer = result?.data?.choices[0]?.message?.content;
-            message.sendMsg(answer, toUser);
+            const answer2 = decodeURIComponent(answer);
+            console.log(answer);
+            console.log(answer2);
+            message.sendMsg(answer2, toUser);
         })
     })
 
