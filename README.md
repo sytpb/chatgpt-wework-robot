@@ -42,6 +42,11 @@
 
 **token ,aeskey**： 在设置API接收里（上面第二步）
 
+**open-api-key**
+这个需要在ChatGPT账号里生成，（如果没有chatgpt 账号也可以让别人生成一个，但是这个会产生费用）
+![image](https://user-images.githubusercontent.com/12178686/233278134-9d3fb914-9f3a-4049-b20e-3b0f237239f6.png)
+
+
 第四步，一键部署到Render（代理服务器，免费，可以升级付费） 
 <a href="https://render.com/deploy?repo=https://github.com/sytpb/chatgpt-wework-robot">
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
@@ -52,7 +57,19 @@
 如图所示，将上面的字段信息填入，然后点击Apply。 
 
 
+需要等3-5分钟部署，完成后复制生成的服务的URL，如下图，然URL，粘贴到上面第二步页面里，然后点保存，看到提示类似”保存成功“，代表服务已经配置成功了！
+![image](https://user-images.githubusercontent.com/12178686/233277321-5392207b-58c5-4c6e-959e-de71518e4094.png)
 
+最后一步： 企业可信IP配置， 应用页的最下方，配置可信IP。 
+![image](https://user-images.githubusercontent.com/12178686/233280128-10dbcbdd-db47-47d2-91a0-8b20f2fd8893.png)
+
+IP地址如下图，Render->Connect->Outbound 
+![image](https://user-images.githubusercontent.com/12178686/233280575-8d92c978-cf06-4763-9443-694f495d3e16.png)
+
+
+手机或电脑上企业微信进入自己创建的应用，发问题就可以畅享ChatGPT的强大了。 
+
+经过一段时间的测试，如果想提高回复速度，办法一是升级Render 为付费，另外一个最重要的因素是Opanai回复的有延迟，因为用的是GPT 3.5 turbo, 如果是PLUS 用户的API Key 会快很多，这是本人的测试情况，供参考。
 
 
 
