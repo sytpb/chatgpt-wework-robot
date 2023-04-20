@@ -36,7 +36,7 @@
 
 第三步，记录和准备下列字段信息， **corpid, agentid, secret, token ,aeskey, open-api-key**
 
-**corpid** :  电脑端上的企业微信-->头像-->管理企业-->我的企业（下方）
+**corpid** :  电脑端上的企业微信-->头像-->管理企业-->我的企业（下方）<br/>
 **agentid, secret**: 第一步里完成后可见。
 ![image](https://user-images.githubusercontent.com/12178686/233275423-67281448-02ee-4e61-8586-0fe095351fb2.png)
 
