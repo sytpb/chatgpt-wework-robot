@@ -1,8 +1,4 @@
-# 企业微信chatGPT AI 智能问答了  **不需要VPN**
-
-
-
-
+# 企业微信应用-chatGPT AI 智能问答  **不需要VPN**
 
 
 <div align="center">
