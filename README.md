@@ -70,8 +70,9 @@
 IP地址如下图，Render->Connect->Outbound 
 ![image](https://user-images.githubusercontent.com/12178686/233280575-8d92c978-cf06-4763-9443-694f495d3e16.png)
 
-
-手机或电脑上企业微信进入自己创建的应用，可以和ChatGPT的聊起来了。 
+将这三个ip地址配置到可信IP里，至此所有配置工作完成。
+<br/>
+下面就可以直接体验了，手机或电脑上企业微信进入自己创建的应用，可以和ChatGPT的聊起来了。 
 
 经过一段时间的测试，如果想提高回复速度，办法一是升级Render 为付费，另外一个最重要的因素是chatgpt回复的有延迟，因为用的是GPT 3.5 turbo, 如果是PLUS 用户的API Key 会快很多，这是本人的测试情况，供参考。
 
