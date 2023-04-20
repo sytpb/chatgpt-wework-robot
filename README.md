@@ -1,4 +1,5 @@
-# 企业微信上可以使用 chatGPT AI 智能问答了 （无须VPN，甚至不需要chatgpt账号）~~~
+# 企业微信上可以使用 chatGPT AI 智能问答了 
+### 不需要VPN
 
 
 
