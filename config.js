@@ -35,7 +35,7 @@ function setAccessToken(token) {
 
 async function getAccessToken() {
 
-    const current = Date().getTime();
+    const current = new Date().getTime();
     if (accessToken.expire > current)           /*timeout*/
         return accessToken.token;
     else {
