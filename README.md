@@ -42,13 +42,14 @@
 
 **token ,aeskey**： 在设置API接收里（上面第二步）
 
-第四步，一键部署到Render 
+第四步，一键部署到Render（代理服务器，免费，可以升级付费） 
 <a href="https://render.com/deploy?repo=https://github.com/sytpb/chatgpt-wework-robot">
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 
+![image](https://user-images.githubusercontent.com/12178686/233276472-77ad1f07-e275-4bc2-a0fa-1c7d0b7172bc.png)
 
-
+如图所示，将上面的字段信息填入，然后点击Apply。 
 
 
 
