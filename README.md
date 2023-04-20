@@ -1,4 +1,4 @@
-# 企业微信应用-chatGPT AI 智能问答  **不需要VPN 不封号 不封号**
+# 一键部署chatGPT到企业微信应用  **不需要VPN 不封号 不封号**
 
 
 <div align="center">
