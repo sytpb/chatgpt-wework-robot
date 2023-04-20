@@ -46,7 +46,7 @@
 这个需要在ChatGPT账号里生成，（如果没有chatgpt 账号也可以让别人生成一个，但是这个会产生费用） 
 ![image](https://user-images.githubusercontent.com/12178686/233278134-9d3fb914-9f3a-4049-b20e-3b0f237239f6.png)
 
-[API KEY](https://platform.openai.com/account/api-keys)
+[申请网址API KEY](https://platform.openai.com/account/api-keys)
 
 
 第四步，一键部署到Render（代理服务器，免费，可以升级付费） 
