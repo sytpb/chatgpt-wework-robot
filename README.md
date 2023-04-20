@@ -4,6 +4,9 @@ the text robot for enterprise weixin
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/233244040-7ab04261-79d7-4588-b8b1-18fc64d9f040.png" width="600px">
 </div>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/12178686/233246963-9f7e5eb0-d78f-4286-8536-2f4e9f9bee11.png" width="800px">
+</div>
 
 
 # About The Project
