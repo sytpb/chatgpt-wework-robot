@@ -13,14 +13,14 @@ services:
     healthCheckPath: /
     envVars:
       - key: PORT
-        value: 6060
+        generateValue: true
       - key: AGENTID
-        value: agentid
+        generateValue: true
       - key: TOKEN
-        value: token
+        generateValue: true
       - key: CORPID
-        value: corpid
+        generateValue: true
       - key: AESKEY
-        value: aeskey
+        generateValue: true
       - key: OPENAI_API_KEY
-        value: openai api key
+        generateValue: true
