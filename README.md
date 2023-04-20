@@ -34,8 +34,24 @@
 第二步，配置应用，操作方法：接收消息一栏-->设置API接收-->未完等待第三步。
 ![image](https://user-images.githubusercontent.com/12178686/233256124-cc6334e3-90ff-43e7-8fe5-3dc0026226fb.png)
 
+第三步，记录和准备下列字段信息， **corpid, agentid, secret, token ,aeskey, open-api-key**
 
-第三步，
+**corpid** :  电脑端上的企业微信-->头像-->管理企业-->我的企业（下方）
+**agentid, secret**: 第一步里完成后可见。
+![image](https://user-images.githubusercontent.com/12178686/233275423-67281448-02ee-4e61-8586-0fe095351fb2.png)
+
+**token ,aeskey**： 在设置API接收里（上面第二步）
+
+第四步，一键部署到Render 
 <a href="https://render.com/deploy?repo=https://github.com/sytpb/chatgpt-wework-robot">
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
+
+
+
+
+
+
+
+
+
