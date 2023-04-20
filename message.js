@@ -213,8 +213,7 @@ export class Message {
 
         //const token = fs.readFileSync('./token').toString();
         const token = await getAccessToken();
-        console.log(token);
-        
+
         const texts = {
             "touser": toUser,
             "msgtype": "text",

@@ -39,11 +39,11 @@ async function getAccessToken() {
     if (accessToken.expire > current)           /*timeout*/
         return accessToken.token;
     else {
+        console.log("access token expired , refresh...")
         const token = await newAccessToken();
         setAccessToken(token);
         return token;
     }
-
 }
 
 async function initAccessToken() {
