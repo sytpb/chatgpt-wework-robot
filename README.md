@@ -31,4 +31,9 @@
 ![image](https://user-images.githubusercontent.com/12178686/233253399-489b0905-9a4c-4b2e-8f5d-ed7e8dac0f6b.png)
 
 
-第二步，配置应用，操作方法：接收消息一栏-->设置API接收
+第二步，配置应用，操作方法：接收消息一栏-->设置API接收-->未完等待第三步。
+![image](https://user-images.githubusercontent.com/12178686/233256124-cc6334e3-90ff-43e7-8fe5-3dc0026226fb.png)
+
+
+第三步，
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
