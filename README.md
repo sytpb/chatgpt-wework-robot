@@ -1,4 +1,4 @@
-# 一键部署chatGPT到企业微信应用  **不需要VPN 不封号 不封号**
+# 一键部署chatGPT到企业微信应用  **不需要VPN 不会封号的方案**
 
 
 <div align="center">
