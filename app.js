@@ -5,7 +5,7 @@ import bodyParserXml from 'body-parser-xml';
 
 import getAIChat from "./openai.js";
 import { Message } from "./message.js";
-
+import { initAccessToken } from "./config.js";
 
 config();
 bodyParserXml(bodyParser);
@@ -47,7 +47,7 @@ app.post('/message', function (req, res, next) {
 });
 
 /*获取access_token*/
-message.updateToken();
+initAccessToken();
 
 // 主动推送消息
 //message.sendMsg('what is up !','songyantao');

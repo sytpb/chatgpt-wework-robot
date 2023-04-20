@@ -1,10 +1,11 @@
-import fs from "fs";
+//import fs from "fs";
 import { config } from "dotenv";
 import request from "request";
 
 import crypto from "crypto";
-import {parseString}  from "xml2js";
-import {xmlmsg1,xmlmsg2} from "./templates.js";
+import { parseString }  from "xml2js";
+import { getAccessToken } from "./config.js";
+import { xmlmsg1,xmlmsg2 } from "./templates.js";
 
 config();
 
@@ -146,7 +147,7 @@ export class Message {
     }
 
     /*获取 access_token*/
-    getAccessToken() {
+    /*getAccessToken() {
 
         var url = `${base.url}/gettoken?corpid=${this.corpid}&corpsecret=${this.secret}`;
         var options = {
@@ -162,9 +163,9 @@ export class Message {
                 }
             });
         });
-    }
+    }*/
 
-    saveToken() {
+    /*saveToken() {
 
         this.getAccessToken().then(res => {
             console.log(res);
@@ -174,15 +175,15 @@ export class Message {
                 console.log('token saved.');
             });
         });
-    }
+    }*/
 
-    updateToken() {
+    /*updateToken() {
 
         this.saveToken();
         setInterval(function () {
             this.saveToken();
         }, 7000 * 1000); // ≈ 2h
-    }
+    }*/
 
     /*接收消息服务器配置*/
     urlSetting(req, res) {
@@ -210,7 +211,8 @@ export class Message {
     /*主动发送消息*/
     sendMsg(answer, toUser) {
 
-        const token = fs.readFileSync('./token').toString();
+        //const token = fs.readFileSync('./token').toString();
+        const token = getAccessToken();
         const texts = {
             "touser": toUser,
             "msgtype": "text",
