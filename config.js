@@ -48,6 +48,7 @@ async function getAccessToken() {
 
 async function initAccessToken() {
     const token = await newAccessToken();
+    console.log("TOKEN:",token);
     setAccessToken(token);  
 }
 
