@@ -29,7 +29,9 @@ app.get('/message', function (req, res, next) {
 /*passive message response*/
 app.post('/message', function (req, res, next) {
 
+    console.log(".....................");
     message.getMsgObj(req).then(result => {
+        console.log("1111111111111111111");
         const question = result.Content[0];
         //const question = "what's the day today?";
         console.log(question);
