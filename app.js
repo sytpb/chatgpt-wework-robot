@@ -21,6 +21,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.xml());
 
+
+
+
+/*health check for render*/
+app.get('/healthz', function (req, res, next) {
+    res.status(200).end();
+});
+
 /*receive server url setting*/
 app.get('/message', function (req, res, next) {
     message.urlSetting(req, res);
