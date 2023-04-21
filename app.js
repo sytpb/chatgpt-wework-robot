@@ -23,7 +23,6 @@ app.use(bodyParser.xml());
 
 /*health check for render*/
 app.get('/healthz', function (req, res, next) {
-    console.log("render health check");
     res.status(200).end();
 });
 
@@ -35,7 +34,6 @@ app.get('/message', function (req, res, next) {
 /*passive message response*/
 app.post('/message', function (req, res, next) {
 
-    console.log(".....................");
     message.getMsgObj(req).then(result => {
         const question = result.Content[0];
         //const question = "what's the day today?";
