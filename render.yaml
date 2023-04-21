@@ -9,7 +9,7 @@ services:
     region: singapore     # optional (defaults to oregon)
     plan: free            # optional (defaults to starter instance type)
     branch: main          # optional (defaults to master)
-    healthCheckPath: /
+    healthCheckPath: /healthz
     buildCommand: npm install
     startCommand: node app.js
     envVars:
