@@ -21,11 +21,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.xml());
 
-
-
-
 /*health check for render*/
 app.get('/healthz', function (req, res, next) {
+    console.log("render health check");
     res.status(200).end();
 });
 
