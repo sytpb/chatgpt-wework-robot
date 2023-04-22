@@ -2,6 +2,7 @@
 
 **一键云函数部署，无须购买独立云服务器，向导式安装，文档详细；本套代码采用国外服务反向代理模式，安全可靠，不存在封号问题，节点是新加坡，网络延迟小,速度快**
 
+https://www.youtube.com/watch?v=UOm39-_Loaw 操作视频
 
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/233244040-7ab04261-79d7-4588-b8b1-18fc64d9f040.png" width="400px">
