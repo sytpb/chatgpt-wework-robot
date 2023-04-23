@@ -35,17 +35,20 @@ app.get('/message', function (req, res, next) {
 app.post('/message', function (req, res, next) {
 
     message.getMsgObj(req).then(result => {
-        const question = result.Content[0];
+        const question = result?.Content[0];
         //const question = "what's the day today?";
         console.log(question);
         const toUser = result.FromUserName[0];
         message.reply(res, { type: 'text', content: '正在生成回答' }, toUser);
 
         getAIChat(question).then(result => {
-            const answer = result?.data?.choices[0]?.message?.content;
-            /*decodeURIComponent(answer);*/
-            console.log(answer);
-            message.sendMsg(answer, toUser);
+            const content = result?.data?.choices[0]?.message?.content;
+            if(!!content) {
+                const answer = Buffer.from(content, 'utf-8').toString();
+                console.log(answer);
+                message.sendMsg(answer, toUser);
+            }
+
         })
     })
 
