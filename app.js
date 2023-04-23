@@ -38,6 +38,7 @@ app.post('/message', function (req, res, next) {
         const question = result?.Content ? result.Content[0] : null;
         if(question === null) {
             console.log("illegal question,I can't recognize");
+            res.end();
             return;
         }
 
