@@ -37,7 +37,7 @@ app.post('/message', function (req, res, next) {
     message.getMsgObj(req).then(result => {
         const question = result?.Content ? result.Content[0] : null;
         if(question === null) {
-            console.log("illgal question,I can't recognize");
+            console.log("illegal question,I can't recognize");
             return;
         }
 
