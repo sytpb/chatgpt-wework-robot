@@ -1,4 +1,3 @@
-import utf8  from "utf8";
 import express from "express";
 import { config } from "dotenv";
 import bodyParser from 'body-parser';
@@ -36,8 +35,12 @@ app.get('/message', function (req, res, next) {
 app.post('/message', function (req, res, next) {
 
     message.getMsgObj(req).then(result => {
-        const question = result?.Content[0];
-        //const question = "what's the day today?";
+        const question = result?.Content ? result.Content[0] : null;
+        if(question === null) {
+            console.log("illgal question,I can't recognize");
+            return;
+        }
+
         console.log(question);
         const toUser = result.FromUserName[0];
         message.reply(res, { type: 'text', content: '正在生成回答' }, toUser);
@@ -45,7 +48,7 @@ app.post('/message', function (req, res, next) {
         getAIChat(question).then(result => {
             const content = result?.data?.choices[0]?.message?.content;
             if(!!content) {
-                const answer = utf8.encode(content);
+                const answer = content;
                 console.log(answer);
                 message.sendMsg(answer, toUser);
             }
