@@ -1,14 +1,12 @@
 import express from "express";
 import { config } from "dotenv";
+import debug from "./comm/debug.js";
 import bodyParser from 'body-parser';
 import bodyParserXml from 'body-parser-xml';
 
-
-//import getAIChat from "./openai.js";
-//import Message from "./message.js";
 import { initAccessToken } from "./comm/config.js";
 import conversation from "./route/conversation.js";
-import debug from "./comm/debug.js";
+
 
 
 config();
@@ -69,5 +67,5 @@ app.post('/message', function (req, res, next) {
 initAccessToken();
 
 app.listen(PORT, () => {
-    console.log(`Server Running on Port:${PORT}`);
+    debug.out(`Server Running on Port:${PORT}`);
 });

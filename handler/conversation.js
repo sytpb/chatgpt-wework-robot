@@ -1,6 +1,7 @@
 
 import debug from "../comm/debug.js";
 import Message from "../comm/message.js";
+import TextChat from "../chat/text.js";
 
 export default class Conversation {
   
@@ -22,17 +23,12 @@ export default class Conversation {
         debug.log(msgType,xml);
 
         if(msgType === "text") {
-            chat = new textChat(msgType,xml);
+            chat = new TextChat(msgType,xml);
         }
-        else if (msgType === "image") {
-            chat = new imageChat(msgType,xml);
-        }
-        else if (msgType === "voice") {
-            chat = new audioChat(msgType,xml);
-        }
+
         debug.log(!!chat);
         if(!!chat) {
-            const answer = chat.process(xml);
+            const answer = chat.process(xml, res);
             
             //comm.response(answer,res)
             return;

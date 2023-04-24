@@ -1,9 +1,11 @@
 "use strict"
 
-
 import Chat from "./chat.js";
 import debug from "../comm/debug.js";
-import getAIChat from "../openai.js";
+
+/*to do more soon...*/
+import Message from "../comm/message.js";
+import getAIChat from "../service/openai.js"
 
 export default class TextChat extends Chat{
   
@@ -11,11 +13,16 @@ export default class TextChat extends Chat{
         super(name);
     }
 
-    process(xml) {
+    process(xml, res) {
 
-        debug.log("text chat...",xml);
-        const question = xml.content;
+        debug.log("text chat...", xml);
+        const question = xml?.content[0];
+        const toUser = xml?.FromUserName[0];
+
         debug.log(question);
+        const message = new Message();
+        message.reply(res, { type: 'text', content: '正在生成回答...' }, toUser);
+
         getAIChat(question).then(result => {
             const content = result?.data?.choices[0]?.message?.content;
             if(!!content) {
@@ -23,7 +30,7 @@ export default class TextChat extends Chat{
 
                 debug.log(answer);
                 console.log(answer);
-                //message.sendMsg(answer, toUser);
+                message.sendMsg(answer, toUser);
             }
         })
     }
