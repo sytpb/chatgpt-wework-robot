@@ -1,11 +1,10 @@
-//import fs from "fs";
 import { config } from "dotenv";
 import request from "request";
 
 import crypto from "crypto";
 import { parseString }  from "xml2js";
 import { getAccessToken } from "./config.js";
-import { xmlmsg1,xmlmsg2 } from "./templates.js";
+import { xmlmsg1,xmlmsg2 } from "../templates.js";
 
 config();
 
@@ -14,7 +13,7 @@ const base = {
 };
 
 
-export class Message {
+export default class Message {
     constructor() {
 
         this.secret =   process.env.SECRET;
@@ -130,6 +129,20 @@ export class Message {
         const encrypt = req.body.xml.Encrypt[0];
         let msg = this.decrypt(encrypt);
         return msg.xml.Content[0];
+    }
+
+    async decode(data) {
+
+        const xmlString = this.decrypt(data.xml.Encrypt[0]);
+        const result = await new Promise((resolve, reject) => 
+            parseString(xmlString,(err, res) => {
+                if (err) 
+                    reject(err);
+                else 
+                    resolve(res);
+        }));
+
+        return result.xml;
     }
 
     async getMsgObj(req) {

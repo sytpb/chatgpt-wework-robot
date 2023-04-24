@@ -3,16 +3,18 @@ import { config } from "dotenv";
 import bodyParser from 'body-parser';
 import bodyParserXml from 'body-parser-xml';
 
-import getAIChat from "./openai.js";
-import { Message } from "./message.js";
-import { initAccessToken } from "./config.js";
+
+//import getAIChat from "./openai.js";
+//import Message from "./message.js";
+import { initAccessToken } from "./comm/config.js";
+import conversation from "./route/conversation.js";
 
 config();
 bodyParserXml(bodyParser);
 
 const app = express();
 const PORT = process.env.PORT;
-const message = new Message();
+//const message = new Message();
 
 /*message.log();*/
 
@@ -26,12 +28,14 @@ app.get('/healthz', function (req, res, next) {
     res.status(200).end();
 });
 
-/*receive server url setting*/
+/*receive server url setting
 app.get('/message', function (req, res, next) {
     message.urlSetting(req, res);
-});
+});*/
 
-/*passive message response*/
+
+app.use('/message',conversation);
+/*passive message response
 app.post('/message', function (req, res, next) {
 
     message.getMsgObj(req).then(result => {
@@ -57,7 +61,7 @@ app.post('/message', function (req, res, next) {
         })
     })
 
-});
+});*/
 
 /*init access_token*/
 initAccessToken();

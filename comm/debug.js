@@ -1,23 +1,31 @@
+"use strict"
+
 Object.defineProperty(global, '__stack', {
-    get: function(){
-      var orig = Error.prepareStackTrace;
+    get: function() {
+      
+      const orig = Error.prepareStackTrace;
       Error.prepareStackTrace = function(_, stack){ return stack; };
-      var err = new Error;
+      
+      const err = new Error;
       Error.captureStackTrace(err, arguments.callee.caller);
-      var stack = err.stack;
+      
+      const stack = err.stack;
       Error.prepareStackTrace = orig;
+      
       return stack;
     }
   });
   
   Object.defineProperty(global, '__line', {
-    get: function(){
+    get: function() {
+      
       return __stack[1].getLineNumber();
     }
   });
   
   Object.defineProperty(global, '__file', {
-    get: function(){
+    get: function() {
+      
       let last = __stack[1].getFileName().lastIndexOf('/');
       return __stack[1].getFileName().slice(last);
     }
