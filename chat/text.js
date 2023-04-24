@@ -21,7 +21,7 @@ export default class TextChat extends Chat{
 
         debug.log(question);
         const message = new Message();
-        message.reply(res, { type: 'text', content: '正在生成回答...' }, toUser);
+        message.reply(res, { type: 'text', content: '正在生成回答' }, toUser);
 
         getAIChat(question).then(result => {
             const content = result?.data?.choices[0]?.message?.content;
