@@ -18,9 +18,9 @@ export default class Conversation {
         const data = body;
         const message = new Message();
         const xml = await message.decode(data);        
-        const msgType = xml.MsgType;
-        debug.log(msgType);
-        
+        const msgType = xml?.MsgType[0];
+        debug.log(msgType,xml);
+
         if(msgType === "text") {
             chat = new textChat(msgType,xml);
         }
@@ -30,7 +30,7 @@ export default class Conversation {
         else if (msgType === "voice") {
             chat = new audioChat(msgType,xml);
         }
-
+        debug.log(!!chat);
         if(!!chat) {
             const answer = chat.process(xml);
             
