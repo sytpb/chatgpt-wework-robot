@@ -13,8 +13,9 @@ export default class TextChat extends Chat{
 
     process(xml) {
 
+        debug.log("text chat...",xml);
         const question = xml.content;
-
+        debug.log(question);
         getAIChat(question).then(result => {
             const content = result?.data?.choices[0]?.message?.content;
             if(!!content) {
@@ -24,7 +25,6 @@ export default class TextChat extends Chat{
                 console.log(answer);
                 //message.sendMsg(answer, toUser);
             }
-
         })
     }
 

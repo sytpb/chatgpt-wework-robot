@@ -4,11 +4,11 @@ import Conversation from "../handler/conversation.js";
 
 import express from "express";
 const router = express.Router();
-debug.log(`----------con--------------`);
+
 router.use('/', function(req, res, next) {
 	let method = req.method;
 	if(method == 'GET') {
-		debug.log(`------------------------ROUTER MSG [URL SETTING]-------------------------`);
+		debug.out(`------------------------ROUTER MSG [URL SETTING]-------------------------`);
 		const conversation = new Conversation();
 		conversation.urlconfig(req, res);
 	}
