@@ -16,7 +16,7 @@ export default class TextChat extends Chat{
     process(xml, res) {
 
         debug.log("text chat...", xml);
-        const question = xml?.content[0];
+        const question = xml?.Content[0];
         const toUser = xml?.FromUserName[0];
 
         debug.log(question);
