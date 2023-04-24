@@ -1,54 +1,30 @@
-"use strict"
 
-Object.defineProperty(global, '__stack', {
-    get: function() {
-      
-      const orig = Error.prepareStackTrace;
-      Error.prepareStackTrace = function(_, stack){ return stack; };
-      
-      const err = new Error;
-      Error.captureStackTrace(err, arguments.callee.caller);
-      
-      const stack = err.stack;
-      Error.prepareStackTrace = orig;
-      
-      return stack;
-    }
-  });
-  
-  Object.defineProperty(global, '__line', {
-    get: function() {
-      
-      return __stack[1].getLineNumber();
-    }
-  });
-  
-  Object.defineProperty(global, '__file', {
-    get: function() {
-      
-      let last = __stack[1].getFileName().lastIndexOf('/');
-      return __stack[1].getFileName().slice(last);
-    }
-  });
-  
-  export default class debug {
+
+export default class debug {
   
       constructor() {
       }
   
+      static stack() {
+        const e = new Error();
+
+        const regex = /\/([^\/]+\.*):(\d+):(\d+)/;
+        const match = regex.exec(e.stack.split("\n")[3]);
+
+        return {
+          name:   match[1],
+          line:   match[2],
+          column: match[3]
+        };
+      }
+  
       static log(...info) {
-          console.error(__file,__line,'>>',...info);
-      }
-  
-      static out(...info) {
-          console.error('>>',...info);
-      }
-  
-      static log2(...info) {
-          console.error(__filename,__line,'>>',info);
+        const s = this.stack();
+        const name = s.name; 
+        const line = s.line;
+        console.log(`<${name}:${line}>`, ...info);
       }
   }
+
   
-  /*debug.log('hello world!','111',222);*/
-  /*debug.log2('hello world!','111',222);*/
-  
+

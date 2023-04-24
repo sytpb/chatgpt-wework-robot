@@ -12,7 +12,6 @@ const base = {
   url: 'https://qyapi.weixin.qq.com/cgi-bin',
 };
 
-
 export default class Message {
     constructor() {
 

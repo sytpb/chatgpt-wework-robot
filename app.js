@@ -8,6 +8,8 @@ import bodyParserXml from 'body-parser-xml';
 //import Message from "./message.js";
 import { initAccessToken } from "./comm/config.js";
 import conversation from "./route/conversation.js";
+import debug from "./comm/debug.js";
+
 
 config();
 bodyParserXml(bodyParser);
