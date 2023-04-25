@@ -78,5 +78,7 @@ IP地址如下图，Render->Connect->Outbound
 
 ### ChatGPT的诞生给整个产业带来巨大的变化，希望大家多交流，多提issue 和点star 关注后续，也希望更多开发小伙伴参与进来，一起撸代码，一起搞新功能。
 
+### Weixin: pig9pig
+
 
 
