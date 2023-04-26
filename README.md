@@ -81,7 +81,7 @@ IP地址如下图，Render->Connect->Outbound
 ### 微信群，有问题建议先提issue。 
 
 <div align="center">
-     <img src="https://user-images.githubusercontent.com/12178686/234575314-214a6c68-614c-43ee-9b51-492348534785.jpg" width="100px" alt="group">
+     <img src="https://user-images.githubusercontent.com/12178686/234575314-214a6c68-614c-43ee-9b51-492348534785.jpg" width="200px" alt="group">
 </div>
 
 
