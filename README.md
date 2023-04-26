@@ -1,5 +1,5 @@
-# 零代码 一键部署chatGPT到企业微信应用 <br/>
-## 不需要梯子
+# 零代码 一键部署chatGPT到企业微信应用 无须VPN<br/>
+
 
 
 <div align="center">
