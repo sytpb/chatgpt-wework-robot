@@ -78,7 +78,7 @@ IP地址如下图，Render->Connect->Outbound
 
 ### ChatGPT的诞生给整个产业带来巨大的变化，希望大家多交流，多提issue 和点star 关注后续，也希望更多开发小伙伴参与进来，一起撸代码，一起搞新功能。
 
-### 微信群，有问题建议先提issue。 
+### 微信群，部署成功，请将与Chatgpt AI聊天截图发群里（有问题建议先提issue），配置可信IP不通过的同学可以私我。
 
 <div align="center">
      <img src="https://user-images.githubusercontent.com/12178686/234575314-214a6c68-614c-43ee-9b51-492348534785.jpg" width="200px" alt="group">
