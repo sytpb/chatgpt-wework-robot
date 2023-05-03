@@ -13,6 +13,8 @@
    ChatGPT 接入企业微信,赋能商业成功
 </div>
 
+一键部署ChatGPT到钉钉 https://github.com/sytpb/chatgpt-dingtalk-robot
+
 ## 关于本项目
 本项目可以实现一键部署ChatGPT到企业微信中，使ChatGPT与企业微信完美融合，手机或电脑上，打开企业微信，就可以使用强大的ChatGPT智能问答。截止目前，本项目可以提供两个能力:<br>
 
