@@ -95,7 +95,7 @@ IP地址如下图，Render->Connect->Outbound
 ### 微信群，部署成功，请将与Chatgpt AI聊天截图发群里（有问题建议先提issue），配置可信IP不通过的同学可以私我。
 
 <div align="center">
-     <img src="https://user-images.githubusercontent.com/12178686/234575314-214a6c68-614c-43ee-9b51-492348534785.jpg" width="200px" alt="group">
+     <img src="https://user-images.githubusercontent.com/12178686/236223678-7df62f05-0623-45dd-8cdc-1a355656a75b.jpg" width="200px" alt="group">
 </div>
 
 
