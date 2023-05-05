@@ -13,7 +13,14 @@
    ChatGPT 接入企业微信,赋能商业成功
 </div>
 
-一键部署ChatGPT到钉钉 https://github.com/sytpb/chatgpt-dingtalk-robot
+## 部署前说明
+现一键部署已支持钉钉和企业微信, 以下情况请选择钉钉的一键部署：<br/>
+
+1. 如果没有特别要求，建议优先选择钉钉的一键部署，因为钉钉相对容易。 <br/>
+2. 如果一键部署企业微信遇到问题，又不想购买独立服务器，请选择钉钉的一键部署。<br/>
+3. 要求群聊里支持Chatgpt, 请选择钉钉的一键部署。
+
+[一键部署ChatGPT到钉钉] (https://github.com/sytpb/chatgpt-dingtalk-robot)
 
 ## 关于本项目
 本项目可以实现一键部署ChatGPT到企业微信中，使ChatGPT与企业微信完美融合，手机或电脑上，打开企业微信，就可以使用强大的ChatGPT智能问答。截止目前，本项目可以提供两个能力:<br>
