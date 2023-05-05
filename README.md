@@ -22,10 +22,11 @@
 4. 企业微信部署可能遇到问题及解决办法，最参考下面的**问题汇总**
 
 <div align="center">
-    <kbd><img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="800px"></kbd>
+    <kbd><img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="200px"></kbd>
+    [钉钉一键部署ChatGPT](https://github.com/sytpb/chatgpt-dingtalk-robot)
 </div>
 
-[钉钉一键部署ChatGPT](https://github.com/sytpb/chatgpt-dingtalk-robot)
+
 
 ## 关于本项目
 本项目可以实现一键部署ChatGPT到企业微信中，使ChatGPT与企业微信完美融合，手机或电脑上，打开企业微信，就可以使用强大的ChatGPT智能问答。截止目前，本项目可以提供两个能力:<br>
