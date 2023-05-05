@@ -22,7 +22,7 @@
 4. 企业微信部署可能遇到问题及解决办法，最参考下面的**问题汇总**
 
 <div align="center">
-    <kbd><img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="200px"></kbd>
+    <img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="200px">
 </div>
 <div align="center">
  [钉钉一键部署ChatGPT](https://github.com/sytpb/chatgpt-dingtalk-robot)
