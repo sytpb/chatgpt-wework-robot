@@ -118,7 +118,7 @@ IP地址如下图，Render->Connect->Outbound
 以下方法适用于，已经拥有自己的独立的服务器的同学。
 1. 前提条件，有国内独立服务器，并且有自己独立的域名（企业微信信已认证的，要求域名在公司名下）
 域名解析参考
-![image](https://user-images.githubusercontent.com/12178686/236603276-d4bed8fb-5ba0-488c-8da4-5014d2a6bf8d.png)
+<img src="https://user-images.githubusercontent.com/12178686/236603276-d4bed8fb-5ba0-488c-8da4-5014d2a6bf8d.png">
 
 2. 安装nodejs ，以linux centos 举例，[以下过程作为参考，整个过程待后续详细确认]
 centos 为例
