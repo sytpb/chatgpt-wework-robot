@@ -33,13 +33,13 @@
 ## 关于本项目
 本项目可以实现一键部署ChatGPT到企业微信中，使ChatGPT与企业微信完美融合，手机或电脑上，打开企业微信，就可以使用强大的ChatGPT智能问答。截止目前，本项目可以提供两个能力:<br>
 
-1. 功能集成，将ChatGPT问答功能集成到企业微信中，借助企业微信权限功能，可以将ChatGPT共享到企业应用当中，此功能要求简单，有企业微信管理员权限即可，方法，参照下面的**部署方法**
+1. 功能集成，将ChatGPT问答功能集成到企业微信中，借助企业微信权限功能，可以将ChatGPT共享到企业应用当中，此功能要求简单，有企业微信管理员权限即可，方法，参照下面的**一键部署方法**
 2. 更强大的功能扩展，本项目为开源项目，有开发能力的小伙伴可以Fork到自己的仓库，根据自己企业业务需要，比如结合企业微信开放的API，二次开发一些其他功能。
 
 3. 其他功能，后续更新。
 
 
-## 部署方法
+## 一键部署方法
 
 [指导视频](https://youtu.be/UOm39-_Loaw)
 1. 创建企业微信应用<br>
@@ -93,9 +93,61 @@ IP地址如下图，Render->Connect->Outbound
 
 经过一段时间的测试，如果想提高回复速度，办法一是升级Render 为付费，另外一个最重要的因素是chatgpt回复的有延迟，因为用的是GPT 3.5 turbo, 如果是PLUS 用户的API Key 会快很多，这是本人的测试情况，供参考。
 
+## 独立服务器部署方法
+以下方法适用于，已经拥有自己的独立的服务器的同学。
+1. 前提条件，有国内独立服务器，并且有自己独立的域名（企业微信信已认证的，要求域名在公司名下）
+域名解析参考
+![image](https://user-images.githubusercontent.com/12178686/236603276-d4bed8fb-5ba0-488c-8da4-5014d2a6bf8d.png)
+
+2. 安装nodejs ，以linux centos 举例，[以下过程作为参考，整个过程待后续详细确认]
+centos 为例
+```
+sudo yum install nodejs  
+```
+3. github 获取代码
+```
+git clone https://github.com/sytpb/chatgpt-wework-robot
+
+```
+4. 安装服务
+```
+cd chatgpt-wework-robot
+npm install 
+```
+
+5. 配置服务
+```
+ cd /etc/systemd/system
+ touch aistory.service
+```
+vim aistory.service 内容如下
+```
+[Unit]
+Description = ai story service
+After = network.target
+
+[Service]
+ExecStart = your path/aistory.sh
+
+[Install]
+WantedBy = multi-user.target
+```
+
+start.sh
+```
+#!/bin/bash
+npm run dev
+```
+
+```
+chmod +x aistory.sh
+```
+
+```
+systemctl start aistory.service
+```
+
 ### 问题汇总
-
-
 1. 服务器异常，稍后再试 <br/>
 请检查服务是否部署完成和正常启动，需要看到your server is live字样才代表服务正常。
 
