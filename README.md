@@ -133,7 +133,7 @@ ExecStart = your path/aistory.sh
 WantedBy = multi-user.target
 ```
 
-start.sh
+aistory.sh
 ```
 #!/bin/bash
 npm run dev
