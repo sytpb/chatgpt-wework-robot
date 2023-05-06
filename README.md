@@ -94,7 +94,6 @@ IP地址如下图，Render->Connect->Outbound
 经过一段时间的测试，如果想提高回复速度，办法一是升级Render 为付费，另外一个最重要的因素是chatgpt回复的有延迟，因为用的是GPT 3.5 turbo, 如果是PLUS 用户的API Key 会快很多，这是本人的测试情况，供参考。
 
 ### 问题汇总
-
 1. 服务器异常，稍后再试 <br/>
 请检查服务是否部署完成和正常启动，需要看到your server is live字样才代表服务正常。
 
