@@ -7,14 +7,11 @@ import bodyParserXml from 'body-parser-xml';
 import { initAccessToken } from "./comm/config.js";
 import conversation from "./route/conversation.js";
 
-
-
 config();
 bodyParserXml(bodyParser);
 
 const app = express();
 const PORT = process.env.PORT;
-//const message = new Message();
 
 /*message.log();*/
 
@@ -28,40 +25,7 @@ app.get('/healthz', function (req, res, next) {
     res.status(200).end();
 });
 
-/*receive server url setting
-app.get('/message', function (req, res, next) {
-    message.urlSetting(req, res);
-});*/
-
-
 app.use('/message',conversation);
-/*passive message response
-app.post('/message', function (req, res, next) {
-
-    message.getMsgObj(req).then(result => {
-        const question = result?.Content ? result.Content[0] : null;
-        if(question === null) {
-            console.log("illegal question,I can't recognize");
-            res.end();
-            return;
-        }
-
-        console.log(question);
-        const toUser = result.FromUserName[0];
-        message.reply(res, { type: 'text', content: '正在生成回答' }, toUser);
-
-        getAIChat(question).then(result => {
-            const content = result?.data?.choices[0]?.message?.content;
-            if(!!content) {
-                const answer = content;
-                console.log(answer);
-                message.sendMsg(answer, toUser);
-            }
-
-        })
-    })
-
-});*/
 
 /*init access_token*/
 initAccessToken();

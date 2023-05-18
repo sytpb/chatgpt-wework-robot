@@ -1,10 +1,9 @@
 import { config } from "dotenv";
-import request from "request";
+//import request from "request";
 
 import crypto from "crypto";
 import { parseString }  from "xml2js";
-import { getAccessToken } from "./config.js";
-import { xmlmsg1,xmlmsg2 } from "../templates.js";
+//import { getAccessToken } from "./config.js";
 
 config();
 
@@ -169,7 +168,7 @@ export default class Message {
         }
     }
 
-    /*passive message*/
+    /*passive message
     reply(res, options, toUser) {
 
         res.writeHead(200, { 'Content-Type': 'application/xml' });
@@ -178,9 +177,9 @@ export default class Message {
         const msgEncrypt = this.encryptMsg(resMsg);
 
         res.end(msgEncrypt);
-    }
+    }*/
 
-    /*active message*/
+    /*active message
     async sendMsg(answer, toUser) {
 
         const token = await getAccessToken();
@@ -204,5 +203,5 @@ export default class Message {
                 console.log(res?.headers,"\n",body)
             }
         });
-    }
+    }*/
 }  
