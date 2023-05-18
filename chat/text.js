@@ -37,15 +37,18 @@ export default class TextChat extends Chat{
     async reponse(info, content, res) {
 
         const toUser = info?.FromUserName[0];
-        const msg = MDUserMsg(toUser, process.env.AGENTID, content);
+        const data = MDUserMsg(toUser, process.env.AGENTID, content);
 
         const token = await getAccessToken();
         const url = host + '/message/send?access_token=' + token;
-        /*const data = {
-            url: host + '/message/send?access_token=' + token,
-            form: JSON.stringify(msg)
-        };*/
-        axios.post(url, JSON.stringify(msg));
+        const config = {
+            headers: {
+                'Accept': "application/json",
+                'Content-Type': "application/json"
+            }
+        };
+
+        await axios.post(url, data, config);
     }
 
     process(xml, res) {
@@ -56,7 +59,7 @@ export default class TextChat extends Chat{
         const id = info?.FromUserName[0];
         const question = info?.Content[0];
 
-        this.reply(info, { type: 'text', content: '正在生成回答' }, res);
+        this.reply(info, '正在生成回答', res);
 
         const openai = new OpenAI();
         const context = Session.update(id, {"role":"user" ,"content":question});
