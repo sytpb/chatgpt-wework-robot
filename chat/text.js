@@ -28,9 +28,9 @@ export default class TextChat extends Chat{
         const parser = new Parser();
         const encrypt = parser.encryptMsg(msg);
 
-        res.set({
+        /*res.set({
             'Content-Type': 'application/xml',
-        });
+        });*/
         res.send(encrypt);
     }
 
@@ -40,12 +40,12 @@ export default class TextChat extends Chat{
         const msg = MDUserMsg(toUser, process.env.AGENTID, content);
 
         const token = await getAccessToken();
-
-        const data = {
+        const url = host + '/message/send?access_token=' + token;
+        /*const data = {
             url: host + '/message/send?access_token=' + token,
             form: JSON.stringify(msg)
-        };
-        axios.post(url, data);
+        };*/
+        axios.post(url, JSON.stringify(msg));
     }
 
     process(xml, res) {
