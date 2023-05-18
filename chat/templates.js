@@ -1,16 +1,14 @@
 export function MDUserMsg(toUser, agentid, content) {
 
-  const markdown = JSON.stringify({"content": content});
+  const markdown = JSON.stringify({ "content": content });
   return `{
     "touser": ${toUser},
     "msgtype": "markdown",
     "agentid": ${agentid},
-    "markdown": {
-      "content": ${markdown}
-    },
+    "markdown": ${markdown},
     "enable_duplicate_check": 0,
     "duplicate_check_interval": 1800
-  }`
+  }`;
 };
 
 
