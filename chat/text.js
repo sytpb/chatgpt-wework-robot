@@ -28,10 +28,10 @@ export default class TextChat extends Chat{
         const parser = new Parser();
         const encrypt = parser.encryptMsg(msg);
 
-        /*res.set({
+        res.set({
             'Content-Type': 'application/xml',
-        });*/
-        res.send(encrypt);
+        });
+        res.end(encrypt);
     }
 
     async reponse(info, content, res) {
