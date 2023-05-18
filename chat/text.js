@@ -6,6 +6,9 @@ import debug from "../comm/debug.js";
 import Parser from "../comm/message.js";
 import { OpenAI } from "../service/openai.js";
 import { XMLUserMsg, MDUserMsg } from "./templates.js";
+import { getAccessToken } from "../comm/accesstoken.js";
+
+const host = "https://qyapi.weixin.qq.com/cgi-bin";
 
 export default class TextChat extends Chat{
   
@@ -18,7 +21,7 @@ export default class TextChat extends Chat{
         return parseInt(new Date().valueOf() / 1000) + delay * 1000;
     }
 
-    ack(info, message, res) {
+    reply(info, message, res) {
 
         const toUser = info?.FromUserName[0];
         const msg = XMLUserMsg(toUser, process.env.CORPID, this.timestamp(), message);
@@ -31,17 +34,18 @@ export default class TextChat extends Chat{
         res.send(encrypt);
     }
 
-    reply(info, content, res) {
+    reponse(info, content, res) {
 
         const toUser = info?.FromUserName[0];
         const msg = MDUserMsg(toUser, process.env.AGENTID, content);
-        const parser = new Parser();
-        const encrypt = parser.encryptMsg(msg);
 
-        res.set({
-            'Content-Type': 'application/xml',
-        });
-        res.send(encrypt);
+        const token = await getAccessToken();
+
+        const data = {
+            url: host + '/message/send?access_token=' + token,
+            form: JSON.stringify(msg)
+        };
+        axios.post(url, data);
     }
 
     process(xml, res) {
@@ -52,7 +56,7 @@ export default class TextChat extends Chat{
         const id = info?.FromUserName[0];
         const question = info?.Content[0];
 
-        this.ack(info, { type: 'text', content: '正在生成回答' }, res);
+        this.reply(info, { type: 'text', content: '正在生成回答' }, res);
 
         const openai = new OpenAI();
         const context = Session.update(id, {"role":"user" ,"content":question});
@@ -64,7 +68,7 @@ export default class TextChat extends Chat{
                 return;
 
             const content = message.content;
-            this.reply(info, content, res);
+            this.reponse(info, content, res);
             Session.update(id, message);
         });
     }

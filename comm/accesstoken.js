@@ -38,13 +38,15 @@ async function getAccessToken() {
         return accessToken.token;
     else {
         console.log("access token expired , refresh...")
-        const token = await newAccessToken();
+        const result = await newAccessToken();
+        const token = result?.data?.access_token;
         setAccessToken(token);
         return token;
     }
 }
 
 async function initAccessToken() {
+
     const result = await newAccessToken();
     const token = result?.data?.access_token;
     console.log("TOKEN:",token);
