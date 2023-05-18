@@ -5,7 +5,7 @@ export function MDUserMsg(toUser, agentid, content) {
     "msgtype": "markdown",
     "agentid": ${agentid},
     "markdown": {
-      "content": ${content}
+      "content": "${content}"
     },
     "enable_duplicate_check": 0,
     "duplicate_check_interval": 1800
