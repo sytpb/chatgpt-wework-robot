@@ -38,6 +38,7 @@ export default class TextChat extends Chat{
 
         const toUser = info?.FromUserName[0];
         const data = MDUserMsg(toUser, process.env.AGENTID, content);
+        debug.log(data);
 
         const token = await getAccessToken();
         const url = host + '/message/send?access_token=' + token;
@@ -48,7 +49,9 @@ export default class TextChat extends Chat{
             }
         };
 
-        await axios.post(url, data, config);
+        axios.post(url, data, config).then((result) => {
+            debug.log(result);
+        });
     }
 
     process(xml, res) {
