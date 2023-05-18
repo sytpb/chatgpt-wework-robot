@@ -56,7 +56,7 @@ export default class TextChat extends Chat{
             }
         };
 
-        axios.post(url, JSON.stringify(content), config).then((result) => {
+        axios.post(url, JSON.stringify(data), config).then((result) => {
             debug.log(result?.data);
         });
     }
