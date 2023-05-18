@@ -1,4 +1,4 @@
-import request from "request";
+import axios from "axios";
 
 let accessToken = { token: 'NO_TICKET', expire: 0 };
 
@@ -11,20 +11,18 @@ function newAccessToken() {
     const secret = process.env.SECRET;
 
     const url = `${baseURL}/gettoken?corpid=${corpid}&corpsecret=${secret}`;
-    const options = {
-        method: 'GET',
-        url: url
+
+
+    const config  = { 
+        headers:{
+            'Accept': "application/json",
+            'Content-Type': "application/json"
+        }
     };
-    return new Promise((resolve, reject) => {
-        request(options, function (err, res, body) {
-            if (res) {
-                const token = JSON.parse(body)['access_token'];
-                resolve(token);
-            } else {
-                reject(err);
-            }
-        });
-    });
+
+    return axios.get(url,config);
+
+
 }
 
 function setAccessToken(token) {
@@ -47,7 +45,8 @@ async function getAccessToken() {
 }
 
 async function initAccessToken() {
-    const token = await newAccessToken();
+    const result = await newAccessToken();
+    const token = result?.data?.access_token;
     console.log("TOKEN:",token);
     setAccessToken(token);  
 }

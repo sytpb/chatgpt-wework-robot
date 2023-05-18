@@ -4,7 +4,7 @@ import debug from "./comm/debug.js";
 import bodyParser from 'body-parser';
 import bodyParserXml from 'body-parser-xml';
 
-import { initAccessToken } from "./comm/config.js";
+import { initAccessToken } from "./comm/accesstoken.js";
 import conversation from "./route/conversation.js";
 
 config();
