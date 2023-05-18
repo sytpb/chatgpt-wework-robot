@@ -50,10 +50,9 @@ export default class TextChat extends Chat{
         const info = xml;
 
         const id = info?.FromUserName[0];
-        const toUser = info?.FromUserName[0];
         const question = info?.Content[0];
 
-        this.ack(info, { type: 'text', content: '正在生成回答' }, toUser);
+        this.ack(info, { type: 'text', content: '正在生成回答' }, res);
 
         const openai = new OpenAI();
         const context = Session.update(id, {"role":"user" ,"content":question});
