@@ -48,7 +48,9 @@ export default class TextChat extends Chat{
 
         debug.out("text chat...", xml);
         const info = xml;
+
         const id = info?.FromUserName[0];
+        const toUser = info?.FromUserName[0];
         const question = info?.Content[0];
 
         this.ack(info, { type: 'text', content: '正在生成回答' }, toUser);
