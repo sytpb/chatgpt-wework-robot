@@ -1,5 +1,5 @@
 "use strict"
-
+import axios from "axios";
 import Chat from "./chat.js";
 import Session from "./session.js";
 import debug from "../comm/debug.js";
