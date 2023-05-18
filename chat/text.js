@@ -14,6 +14,13 @@ export default class TextChat extends Chat{
   
     constructor(name) {
         super(name);
+        
+        this.censor = function(key,value) {
+            if(typeof(value) == 'function'){
+                return Function.prototype.toString.call(value)
+            }   
+            return value;
+        };  
     }
 
     timestamp(delay = 0) {
@@ -49,8 +56,8 @@ export default class TextChat extends Chat{
             }
         };
 
-        axios.post(url, JSON.stringify(data), config).then((result) => {
-            debug.log(result);
+        axios.post(url, JSON.stringify(content,this.censor,4), config).then((result) => {
+            debug.log(result?.data);
         });
     }
 
