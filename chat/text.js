@@ -34,7 +34,7 @@ export default class TextChat extends Chat{
         res.send(encrypt);
     }
 
-    reponse(info, content, res) {
+    async reponse(info, content, res) {
 
         const toUser = info?.FromUserName[0];
         const msg = MDUserMsg(toUser, process.env.AGENTID, content);
