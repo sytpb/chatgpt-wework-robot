@@ -2,7 +2,7 @@ export function MDUserMsg(toUser, agentid, content) {
 
   const markdown = JSON.stringify({ "content": content });
   return `{
-    "touser": ${toUser},
+    "touser": "${toUser}",
     "msgtype": "markdown",
     "agentid": ${agentid},
     "markdown": ${markdown},
