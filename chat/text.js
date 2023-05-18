@@ -49,14 +49,14 @@ export default class TextChat extends Chat{
 
         const token = await getAccessToken();
         const url = host + '/message/send?access_token=' + token;
-        const config = {
+        /*const config = {
             headers: {
                 'Accept': "application/json",
                 'Content-Type': "application/json"
             }
-        };
+        };*/
 
-        axios.post(url, JSON.stringify(data), config).then((result) => {
+        axios.post(url, data).then((result) => {
             debug.log(result?.data);
         });
     }
