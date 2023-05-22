@@ -71,11 +71,10 @@
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 
-![image](https://user-images.githubusercontent.com/12178686/233276472-77ad1f07-e275-4bc2-a0fa-1c7d0b7172bc.png)
 
 ![image](https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/a82e7f63-6051-4765-a81e-67fdb9bbae55)
 
-
+OPENAI_MODEL填入 gpt-3.5-turbo 或者 gpt-4， 注意：不支持gpt4填入gpt-4无效。
 
 如图所示，将上面的字段信息填入，然后点击Apply。 
 
