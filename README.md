@@ -71,7 +71,10 @@
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 
-![image](https://user-images.githubusercontent.com/12178686/233276472-77ad1f07-e275-4bc2-a0fa-1c7d0b7172bc.png)
+
+![image](https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/a82e7f63-6051-4765-a81e-67fdb9bbae55)
+
+OPENAI_MODEL填入 gpt-3.5-turbo 或者 gpt-4， 注意：不支持gpt4填入gpt-4无效。
 
 如图所示，将上面的字段信息填入，然后点击Apply。 
 
@@ -181,7 +184,7 @@ systemctl start aistory.service
 欢迎来群里讨论！
 
 <div align="center">
-     <img src="https://user-images.githubusercontent.com/12178686/236223678-7df62f05-0623-45dd-8cdc-1a355656a75b.jpg" width="200px" alt="group">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/e3090465-8857-4100-8e0e-df0d398e50f7" width="200px" alt="group">
 </div>
 
 
