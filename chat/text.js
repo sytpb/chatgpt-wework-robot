@@ -5,8 +5,8 @@ import Session from "./session.js";
 import debug from "../comm/debug.js";
 import Parser from "../comm/message.js";
 import { OpenAI } from "../service/openai.js";
-import { XMLUserMsg, MDUserMsg } from "./templates.js";
 import { getAccessToken } from "../comm/accesstoken.js";
+import { XMLUserMsg, MDUserMsg, TextUserMsg } from "./templates.js";
 
 const host = "https://qyapi.weixin.qq.com/cgi-bin";
 
@@ -44,7 +44,9 @@ export default class TextChat extends Chat{
     async reponse(info, content, res) {
 
         const toUser = info?.FromUserName[0];
-        const data = MDUserMsg(toUser, process.env.AGENTID, content);
+
+        const data = process.env.MSG_TYPE === "markdown" ? 
+            MDUserMsg(toUser, process.env.AGENTID, content) : TextUserMsg(toUser,process.env.AGENTID, content)
         debug.log(data);
 
         const token = await getAccessToken();
@@ -63,7 +65,7 @@ export default class TextChat extends Chat{
 
     process(xml, res) {
 
-        debug.out("text chat...", xml);
+        /*debug.out("text chat...", xml);*/
         const info = xml;
 
         const id = info?.FromUserName[0];
