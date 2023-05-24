@@ -13,11 +13,12 @@ export function MDUserMsg(toUser, agentid, content) {
 
 export function TextUserMsg(toUser, agentid, content) {
 
+  const text = JSON.stringify({ "content": content });
   return `{
     "touser": "${toUser}",
     "msgtype": "text",
     "agentid": ${agentid},
-    "content": "${content}",
+    "text": "${text}",
     "enable_duplicate_check": 0,
     "duplicate_check_interval": 1800
   }`;
