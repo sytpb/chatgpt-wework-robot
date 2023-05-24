@@ -18,7 +18,7 @@ export function TextUserMsg(toUser, agentid, content) {
     "touser": "${toUser}",
     "msgtype": "text",
     "agentid": ${agentid},
-    "text": "${text}",
+    "text": ${text},
     "enable_duplicate_check": 0,
     "duplicate_check_interval": 1800
   }`;
