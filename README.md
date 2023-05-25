@@ -1,7 +1,24 @@
 # 零代码 一键部署chatGPT到企业微信应用 无须翻墙<br/>
 
+<div align="center"  style="font-size: 12px; line-height: 12px;">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/13e3a894-75e2-4c3d-a4fa-5565940121fa" width="160px">
+</div>
+<div align="center"  style="font-size: 12px; line-height: 12px;">
+   在微信中使用场景
+</div>
+<div align="center">
+    <kbd>
+        <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="400px">
+    </kbd>
+</div>
+<br/><br/>
 
-
+<div align="center"  style="font-size: 12px; line-height: 12px;">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/700b5925-fcab-42e9-ba71-158c64a253ba" width="160px">
+</div>
+<div align="center" style="display: inline-block;"> 
+    在企业微信中使用场景
+</div>
 <div align="center">
     <kbd>
         <img src="https://user-images.githubusercontent.com/12178686/233244040-7ab04261-79d7-4588-b8b1-18fc64d9f040.png" width="400px">
@@ -15,26 +32,9 @@
     </kbd>
 </div>
 
-<center>
-    <div align="center"  style="font-size: 12px; line-height: 12px;">
-         <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/700b5925-fcab-42e9-ba71-158c64a253ba" width="160px">
-    </div>
-    <div align="center" style="display: inline-block;"> 
-        在企业微信中使用场景
-    </div>
-</center>
-
 <br/><br/>
 
-<div align="center">
-    <kbd>
-        <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="400px">
-    </kbd>
-</div>
-<div align="center"  style="font-size: 12px; line-height: 12px;">
-   在微信中使用场景
-</div>
-<br/><br/>
+
 
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    ChatGPT 接入企业微信,赋能商业成功
