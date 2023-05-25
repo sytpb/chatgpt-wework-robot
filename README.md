@@ -110,14 +110,12 @@
 | AGENTID                           |                                |                                                                                                                                           |
 | CORPID                            |                                |                                                                                                                                           |
 | OPENAI_API_KEY                    |                                |                                                                                                                                           |
-| OPENAI_MODEL                      |  gpt-3.5-turbo                 |     gpt-3.5-turbo 或者gpt-4                                                                                                               |
+| OPENAI_MODEL                      |  gpt-3.5-turbo                 |     gpt-3.5-turbo 或者gpt-4    注意：不支持gpt4填入gpt-4无效                                                                               |
 | SECRET                            |                                |                                                                                                                                           |
 | TOKEN                             |                                |                                                                                                                                           |
 | MSG_TYPE                          |  xml                           |     xml 或者 markdown, xml:支持微信里使用                                                                                                  |
 | PORT                              |  6060                          |     可以改成其他                                                                                                                           |
 
-
-OPENAI_MODEL填入 gpt-3.5-turbo 或者 gpt-4， 注意：不支持gpt4填入gpt-4无效。
 
 如图所示，将上面的字段信息填入，然后点击Apply。 
 
