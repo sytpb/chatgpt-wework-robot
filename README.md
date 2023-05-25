@@ -9,6 +9,12 @@
     <img src="https://user-images.githubusercontent.com/12178686/233246963-9f7e5eb0-d78f-4286-8536-2f4e9f9bee11.png" width="800px">
 </div>
 
+<div align="center">
+    <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="800px">
+    直接在微信里使用
+</div>
+
+
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    ChatGPT 接入企业微信,赋能商业成功
 </div>
