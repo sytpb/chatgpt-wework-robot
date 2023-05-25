@@ -13,8 +13,10 @@
 </div>
 <br/><br/>
 
+
+
 <div align="center"  style="font-size: 12px; line-height: 12px;">
-     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/700b5925-fcab-42e9-ba71-158c64a253ba" width="160px">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/ca81d79a-39ac-4c09-aee1-bd3225e42fc1" width="120px">
 </div>
 <div align="center" style="display: inline-block;"> 
     在企业微信中使用场景
