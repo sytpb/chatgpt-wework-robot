@@ -14,22 +14,20 @@
     <img src="https://user-images.githubusercontent.com/12178686/233246963-9f7e5eb0-d78f-4286-8536-2f4e9f9bee11.png" width="800px">
     </kbd>
 </div>
-<br/><br/>
-
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    在企业微信中使用场景
 </div>
+<br/><br/>
 
 <div align="center">
     <kbd>
         <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="400px">
     </kbd>
 </div>
-<br/><br/>
-
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    在微信中使用场景
 </div>
+<br/><br/>
 
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    ChatGPT 接入企业微信,赋能商业成功
