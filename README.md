@@ -19,10 +19,11 @@
     <div align="center"  style="font-size: 12px; line-height: 12px;">
          <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/700b5925-fcab-42e9-ba71-158c64a253ba" width="160px">
     </div>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block; color: #999; padding: 2px;"> 
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block; color: #999; padding: 2px;text-align: center"> 
         在企业微信中使用场景
     </div>
 </center>
+
 <br/><br/>
 
 <div align="center">
