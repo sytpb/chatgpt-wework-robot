@@ -222,11 +222,9 @@ systemctl start aistory.service
 ```
 </details>
 
-<details>
-     
-## docker部署
-     
-<summary>服务器docker部署</summary>
+## Docker部署
+<details>          
+<summary>点击查看详细署</summary>
 
 
 1. 相较于**云函数部署**方案，该方案需要:
