@@ -222,6 +222,53 @@ systemctl start aistory.service
 ```
 </details>
 
+<details>
+     
+## docker部署
+     
+<summary>服务器docker部署</summary>
+
+
+1. 相较于**云函数部署**方案，该方案需要:
+    - 一台服务器
+    - 一个域名
+
+1. 创建企业微信应用（参考`云函数部署 1.创建企业微信应用 第一、二、三步`）
+
+1. 复制变量文件 `.env.example`，填写自己的配置
+
+    - 若服务器网络与openai api不能直连，可配置自定义 openai api 地址，`OPENAI_PROXY_URL`.  
+      若无需自定义，请留空.
+        ```yaml
+        OPENAI_PROXY_URL=openai.abc.com
+        ```
+
+1. 运行docker
+
+    假设新变量文件名为 `.env.local`
+
+    ```bash
+    # docker4bill/ww-openai-node:alpine 为构建好的镜像，你也可以利用本仓库的 Dockerfile 构建自己的镜像
+    docker run --env-file .env.local -p 6060:6060 -d docker4bill/ww-openai-node:alpine
+    ```
+
+1. 用 `caddy` 或者 `nginx` 给以上服务做个反代
+
+    假设域名是**abc.com**, 以`caddy`为例配置:
+
+    ```yaml
+    abc.com {
+      reverse_proxy localhost:6060
+    }
+    ```
+
+1. 将服务器IP添加到**企业可信IP**
+
+1. 填写**接收消息服务器配置 URL**
+
+    假设反代地址为`abc.com`，在**其后添加/message**，将地址`https://abc.com/message`填入接收消息服务器配置的URL里
+</details>
+
 ## 新功能调查
 
 您的工作场景，最想要Chatgpt为您做什么？除了现有的问答模式。假如需要以下功能，
