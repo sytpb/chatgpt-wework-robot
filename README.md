@@ -137,6 +137,16 @@ IP地址如下图，Render->Connect->Outbound
 经过一段时间的测试，如果想提高回复速度，办法一是升级Render 为付费，另外一个最重要的因素是chatgpt回复的有延迟，因为用的是GPT 3.5 turbo, 如果是PLUS 用户的API Key 会快很多，这是本人的测试情况，供参考。
 
 
+### 使用方法
+1. 企业微信，工作台，找到你的应用，打开后直接发消息即可。
+2. 个人微信， 需要一些额外设置， 在企业微信后台
+
+    <kbd>
+        <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/a8c55a14-72f7-4525-bba5-8743c98284cf" width="400px">
+    </kbd>
+扫码后就可以在手机看到你的应用，打开后就可以使用了！
+
+
 ### 问题汇总
 1. 服务器异常，稍后再试 <br/>
 请检查服务是否部署完成和正常启动，需要看到your server is live字样才代表服务正常。
