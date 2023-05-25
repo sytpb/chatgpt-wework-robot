@@ -11,7 +11,6 @@
 
 <kbd align="center">
     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="400px">
-    直接在微信里使用
 </kbd>
 
 
