@@ -29,3 +29,6 @@ services:
         sync: false
       - key: OPENAI_API_KEY
         sync: false
+      - key: MSG_TYPE
+        sync: false
+        
