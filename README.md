@@ -1,7 +1,7 @@
 # 零代码 一键部署chatGPT到企业微信应用 无须翻墙<br/>
 
 <div align="center"  style="font-size: 12px; line-height: 12px;">
-     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/13e3a894-75e2-4c3d-a4fa-5565940121fa" width="160px">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/13e3a894-75e2-4c3d-a4fa-5565940121fa" width="120px">
 </div>
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    在微信中使用场景
