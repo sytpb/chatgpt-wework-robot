@@ -1,13 +1,41 @@
 # 零代码 一键部署chatGPT到企业微信应用 无须翻墙<br/>
 
-
-
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/12178686/233244040-7ab04261-79d7-4588-b8b1-18fc64d9f040.png" width="400px">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/13e3a894-75e2-4c3d-a4fa-5565940121fa" width="120px">
+</div>
+<div align="center"  style="font-size: 12px; line-height: 12px;">
+   在微信中使用场景
 </div>
 <div align="center">
+    <kbd>
+        <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="400px">
+    </kbd>
+</div>
+<br/><br/>
+
+
+<div align="center">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/69e6b599-f9fe-434a-ae38-1cd951cfd362" width="120px">
+</div>
+<div align="center" style="display: inline-block;"> 
+    在企业微信中使用场景
+</div>
+<div align="center">
+    <kbd>
+        <img src="https://user-images.githubusercontent.com/12178686/233244040-7ab04261-79d7-4588-b8b1-18fc64d9f040.png" width="400px">
+    </kbd>
+</div>
+<br/><br/>
+
+<div align="center">
+    <kbd>
     <img src="https://user-images.githubusercontent.com/12178686/233246963-9f7e5eb0-d78f-4286-8536-2f4e9f9bee11.png" width="800px">
+    </kbd>
 </div>
+
+<br/><br/>
+
+
 
 <div align="center"  style="font-size: 12px; line-height: 12px;">
    ChatGPT 接入企业微信,赋能商业成功
@@ -74,7 +102,20 @@
 
 ![image](https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/a82e7f63-6051-4765-a81e-67fdb9bbae55)
 
-OPENAI_MODEL填入 gpt-3.5-turbo 或者 gpt-4， 注意：不支持gpt4填入gpt-4无效。
+**参数请参照下表完成**
+
+| Key                               |  value                         | 说明                                                                                                                                      |
+| --------------------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| AESKEY                            |                                |                                                                                                                                           |
+| AGENTID                           |                                |                                                                                                                                           |
+| CORPID                            |                                |                                                                                                                                           |
+| OPENAI_API_KEY                    |                                |                                                                                                                                           |
+| OPENAI_MODEL                      |  gpt-3.5-turbo                 |     gpt-3.5-turbo 或者gpt-4    注意：不支持gpt4填入gpt-4无效                                                                               |
+| SECRET                            |                                |                                                                                                                                           |
+| TOKEN                             |                                |                                                                                                                                           |
+| MSG_TYPE                          |  xml                           |     xml 或者 markdown, xml:支持微信里使用                                                                                                  |
+| PORT                              |  6060                          |     可以改成其他                                                                                                                           |
+
 
 如图所示，将上面的字段信息填入，然后点击Apply。 
 
