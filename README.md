@@ -281,7 +281,7 @@ systemctl start aistory.service
 欢迎来群里讨论！
 
 <div align="center">
-     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/e3090465-8857-4100-8e0e-df0d398e50f7" width="200px" alt="group">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/1370d669-180e-472f-bed8-e1d7e400e899" width="200px" alt="group">
 </div>
 
 
