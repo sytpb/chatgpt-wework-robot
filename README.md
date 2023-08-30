@@ -49,7 +49,7 @@
 
 <div align="center">
      <kbd>
-         <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/9f2537aa-8dab-496f-b10d-08223f1f959b" width="300px">
+         <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/9f2537aa-8dab-496f-b10d-08223f1f959b" width="800px">
      </kbd>
 </div>
 <div align="center"> https://www.youtube.com/watch?v=Wd6zc7WmeUI </div>
