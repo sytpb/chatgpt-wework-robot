@@ -8,7 +8,7 @@
 </div>
 <div align="center">
     <kbd>
-        <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="400px">
+        <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/df55ac4f-e6f2-480b-b1cc-06299a07651a" width="600px">
     </kbd>
 </div>
 <br/><br/>
@@ -47,11 +47,10 @@
 需要体验的企业欢迎聊系我，名额有限。
 
 
-
 <div align="center">
     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/9f2537aa-8dab-496f-b10d-08223f1f959b" width="300px">
 </div>
-
+https://www.youtube.com/watch?v=Wd6zc7WmeUI
 
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="200px">
