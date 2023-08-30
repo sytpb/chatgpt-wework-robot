@@ -47,8 +47,9 @@
 需要体验的企业欢迎聊系我，名额有限。
 
 
+
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png](https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/7be9a750-75fc-492b-b8ae-6f7ceb781514" width="200px">
+    <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/9f2537aa-8dab-496f-b10d-08223f1f959b" width="300px">
 </div>
 
 
