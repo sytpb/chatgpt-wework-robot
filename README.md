@@ -46,6 +46,12 @@
 接入场景包括 *微信*，*公众号*，*视频号小店*，*小程序*等
 需要体验的企业欢迎聊系我，名额有限。
 
+
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png](https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/7be9a750-75fc-492b-b8ae-6f7ceb781514" width="200px">
+</div>
+
+
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="200px">
 </div>
