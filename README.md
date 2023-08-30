@@ -52,7 +52,7 @@
          <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/9f2537aa-8dab-496f-b10d-08223f1f959b" width="300px">
      </kbd>
 </div>
-<link> https://www.youtube.com/watch?v=Wd6zc7WmeUI </link>
+<div align="center"> https://www.youtube.com/watch?v=Wd6zc7WmeUI </div>
 
 <div align="center">
     <img src="https://user-images.githubusercontent.com/12178686/236364198-d1d7d298-16d0-4e81-aaf7-89d108f0eea3.png" width="200px">
